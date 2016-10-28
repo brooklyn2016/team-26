@@ -1,0 +1,30 @@
+
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+___________                     ________  ________
+\__    ___/___ _____    _____   \_____  \/  _____/
+  |    |_/ __ \\__  \  /     \   /  ____/   __  \ 
+  |    |\  ___/ / __ \|  Y Y  \ /       \  |__\  \
+  |____| \___  >____  /__|_|  / \_______ \_____  /
+             \/     \/      \/          \/     \/ 
+-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+
+What up team! I don't know about y'all but im super stoked
+for 24hrs worth of hacking lol. If you guys want to start some
+sort of group chat to get the ball rolling, here's my stuff:
+
+C: 805-433-3589
+E: hthomas@stevens.edu
+
+I'm pretty comfortable with front-end dev and I have
+some experience with full stack using Node.js. Most of 
+my database experience is with non-relational dbs like 
+mongo, but I do understand basic SQL queries. 
+
+I think it'd be advantageous if we started talking 
+about our strengths now so we don't have to spend time 
+delegating when we meet tomorrow :D
+
+Commit your stuff to this file so we can practice some githubbin'
+and so it's all in one neat place.
+
+Go team go!

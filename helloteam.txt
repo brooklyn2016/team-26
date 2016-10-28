@@ -28,3 +28,12 @@ Commit your stuff to this file so we can practice some githubbin'
 and so it's all in one neat place.
 
 Go team go!
+
+-------------------------------------
+
+Hey guys!I'm Jason. My email is jsarwar@stevens.edu.
+
+I'm confortable with back-end development like Java, C++, C# or JavaScript.
+Let's do this!
+
+-------------------------------------

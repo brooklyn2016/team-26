@@ -2,10 +2,10 @@
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 ___________                     ________  ________
 \__    ___/___ _____    _____   \_____  \/  _____/
-  |    |_/ __ \\__  \  /     \   /  ____/   __  \ 
+  |    |_/ __ \\__  \  /     \   /  ____/   __  \
   |    |\  ___/ / __ \|  Y Y  \ /       \  |__\  \
   |____| \___  >____  /__|_|  / \_______ \_____  /
-             \/     \/      \/          \/     \/ 
+             \/     \/      \/          \/     \/
 -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 What up team! I don't know about y'all but im super stoked
@@ -16,12 +16,12 @@ C: 805-433-3589
 E: hthomas@stevens.edu
 
 I'm pretty comfortable with front-end dev and I have
-some experience with full stack using Node.js. Most of 
-my database experience is with non-relational dbs like 
-mongo, but I do understand basic SQL queries. 
+some experience with full stack using Node.js. Most of
+my database experience is with non-relational dbs like
+mongo, but I do understand basic SQL queries.
 
-I think it'd be advantageous if we started talking 
-about our strengths now so we don't have to spend time 
+I think it'd be advantageous if we started talking
+about our strengths now so we don't have to spend time
 delegating when we meet tomorrow :D
 
 Commit your stuff to this file so we can practice some githubbin'
@@ -35,5 +35,11 @@ Hey guys!I'm Jason. My email is jsarwar@stevens.edu.
 
 I'm confortable with back-end development like Java, C++, C# or JavaScript.
 Let's do this!
+
+-------------------------------------
+
+I'm Jack, and I too can commit to the Github repo. I like javascript.
+C: 206-446-0201
+E: johnhenrypetersen@gmail.com
 
 -------------------------------------

@@ -10,8 +10,8 @@ const router = express.Router();
 const data = require("../data");
 const countryData = data.country;
 
-router.get("/:country/:id", (req, res) => {
-    countryData.getRecordById(req.params.country, req.params.id).then((record) => {
+router.get("/:country", (req, res) => {
+    countryData.getAllRecords(req.params.country).then((record) => {
         res.json(record);
     }, (error) => {
         // Not found!
@@ -19,8 +19,8 @@ router.get("/:country/:id", (req, res) => {
     });
 });
 
-router.get("/:country", (req, res) => {
-    countryData.getAllRecords(req.params.country).then((record) => {
+router.get("/:country/:id", (req, res) => {
+    countryData.getRecordById(req.params.country, req.params.id).then((record) => {
         res.json(record);
     }, (error) => {
         // Not found!

@@ -17,12 +17,13 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 // This middleware will activate for every request we make to 
 // any path starting with /assets;
 // it will check the 'static' folder for matching files 
-app.use(express.static(path.join(__dirname, 'www')));
+app.use(express.static(path.join(__dirname, 'www/static')));
+
 
 app.get("/", function (request, response) { 
     // We have to pass a second parameter to specify the root directory
     // __dirname is a global variable representing the file directory you are currently in
-    response.sendFile("./www/welcome.html", { root: __dirname });
+    response.sendFile("/www/welcome.html", { root: __dirname });
 });
 
 app.get("/dbcall/:country", function(request, response) {

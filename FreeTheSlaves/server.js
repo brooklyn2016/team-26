@@ -22,8 +22,20 @@ app.get("/", function (request, response) {
     response.sendFile("./www/index.html", { root: __dirname });
 });
 
-app.post("index.html", function(request, response) {
+app.post("/index.html", function (request, response) {
+    var tableData = [];
     
+    // our request.body will get populated as an object
+    for (var key in request.body) {
+        var data = request.body[key];
+        var entry = {
+            inputName: key
+        };
+
+        tableData.push(entry);
+    }
+
+    response.sendFile('./www/cool.html', { status: "success"});
 });
 
 

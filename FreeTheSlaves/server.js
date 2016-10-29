@@ -40,6 +40,15 @@ app.get("/cool.html/:country", function(request, response) {
 
 });
 
+app.get("/:country/:id", function(request, response) {
+    countryData.getRecordById(request.params.country, request.params.id).then((record) => {
+        response.json(record);
+    }, (error) => {
+        // Not found!
+        response.status(404).json({message: "not found!"});
+    });
+});
+
 app.post("/index.html", function(request, response) {
 
     if(!request.body.country) {
@@ -55,6 +64,16 @@ app.post("/index.html", function(request, response) {
     
 });
 
+
+app.delete("/cool.html/:country/:id", function(request, response) {
+    return countryData.removeRecord(request.params.country, request.params.id)
+        .then(() => {
+            response.sendStatus(200);
+        }).catch((e) => {
+            response.status(500).json({ error: e });
+        });
+
+});
 
 // We can now navigate to localhost:3000
 app.listen(3000, function () {

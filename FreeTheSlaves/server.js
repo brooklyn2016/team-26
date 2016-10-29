@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 app.get("/", function (request, response) { 
     // We have to pass a second parameter to specify the root directory
     // __dirname is a global variable representing the file directory you are currently in
-    response.sendFile("./www/index.html", { root: __dirname });
+    response.sendFile("./www/welcome.html", { root: __dirname });
 });
 
 app.get("/dbcall/:country", function(request, response) {

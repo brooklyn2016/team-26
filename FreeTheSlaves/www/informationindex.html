@@ -1,0 +1,103 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" href="css/freeTheSlaves.css"/>
+	</head>
+	<body>
+		<form>
+      Select your country:
+      <select id="myCountry">
+        <option value="Fill me in!">Fill me in!</option>
+        <option value="India">India</option>
+        <option value="Haiti">Haiti</option>
+        <option value="Ghana">Ghana</option>
+        <option value="DRC">DRC</option>
+        <option value="Nepal">Nepal</option>
+        <option value="Senegal">Senegal</option>
+      </select>
+      Select your language:
+      <select id="myLanguage">
+        <option value="Fill me in!">Fill me in!</option>
+        <option value="kreyòl ayisyen">kreyòl ayisyen</option>
+        <option value="Franse">Franse</option>
+        <option value="Akan">Akan</option>
+        <option value="Hindi">Hindi</option>
+        <option value="Maithili">Maithili</option>
+        <option value="Nepali">Nepali</option>
+        <option value="Wolof">Wolof</option>
+        <option value="Urdu">Urdu</option>
+      </select>
+      Enter your community:
+        <label for="textarea"></label>
+          <textarea height="10" width="10" name="textarea-1" id="textarea-1"></textarea>
+      Population number:
+      <label for="textarea"></label>
+        <textarea height="10" width="10" name="textarea-2" id="textarea-2"></textarea>
+
+      Enter the date:
+      <input type="date"> 
+      <!-- <label for="textarea"></label>
+        <textarea height="10" width="10" name="textarea-3" id="textarea-3"></textarea> -->
+
+      </select>
+
+
+			<!-- <input type="submit" name="submit" id="submit"> -->
+		</form>
+	</body>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+
+</html>
+<script>
+// 	$(document).ready(function(){
+// 		$('#submit').click('on',function(){
+// 			var fData = new FormData();
+// 			//Question 1
+// 			fData.append( 'PartAQuestion1', $("input:radio[name='question1']:checked").val());
+// 			//Question 2
+// 			fData.append( 'PartAQuestion2', $("input:radio[name='question2']:checked").val());
+// 			//Question 3
+// 			fData.append( 'PartAQuestion3', $("input:radio[name='question3']:checked").val());
+// 			//Question 4
+// 			fData.append( 'PartAQuestion4', $("input:radio[name='question4']:checked").val());
+// 			//Question 5
+// 			fData.append( 'PartAQuestion5', $("input:radio[name='question5']:checked").val());
+// 			for (var pair of fData.entries()) {
+//     			console.log(pair[0]+ ', ' + pair[1]);
+// 			}
+// 			//Upload file
+// 			$.ajax({
+// 				type: 'POST',
+// 				dataType: 'JSON',
+// 				url: 'index.html',
+// 				crossDomain: true,
+// 				data: fData,
+// 				processData: false,
+// 				contentType: false,
+// 				cache: false,
+// 				success: function(responce){
+// 					console.log("Success");
+// 				},
+// 				error: function(responce){
+// 					console.log("Error");
+// 				}
+// 			});
+// 		});
+// 	});
+// </script>

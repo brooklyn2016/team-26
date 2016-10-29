@@ -749,9 +749,7 @@ button[disabled],
 
 /* OUR STYLEZ
 -----------------------------------------------------------------------------------------------------------*/
-
-#ui-mobile-viewport{
-    background-image: url(https://www.freetheslaves.net/wp-content/themes/freetheslaves/images/map.jpg);
-	background-color: #444;
-       
+#login-box{
+	float:none; 
+	margin:0 auto;
 }

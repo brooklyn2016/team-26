@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const app = express();
-const configureRoutes = require("./routes");
+const configureRoutes = require("./mongoDB/routes");
 
 app.use(bodyParser.json());
 configureRoutes(app);

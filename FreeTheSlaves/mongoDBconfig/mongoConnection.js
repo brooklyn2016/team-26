@@ -1,8 +1,8 @@
-/* Name: Jason Mohammad Sarwar
- * CS 546
- * Lab 5 - A Recipe API
- * October 24, 2016
- * config\mongoConnections.js 
+/* Code For Good 2016
+ * Free the Slaves
+ * MongoDB Setup
+ * October 28, 2016
+ * mongoDBconfig\mongoConnections.js 
  */
 
 const MongoClient = require("mongodb").MongoClient;;
@@ -10,7 +10,7 @@ const MongoClient = require("mongodb").MongoClient;;
 const settings = {
     mongoConfig: {
         serverUrl: "mongodb://localhost:27017/",
-        database: "lab5-recipes"
+        database: "Free_the_Slaves"
     }
 };
 

@@ -164,16 +164,14 @@ app.post("/postRecord", function(request, response) {
 
     
     newRecJSON["G"] = request.body;
-    if(!request.body.country) {
-        response.status(400).json({message: "country not given!"});
-    } else {
     
-        countryData.addRecord(newRecJSON).then((record) => {
-            response.json(record);
-        }, (error) => {
-            response.status(500).json({message: "unable to add record!"});
-        });
-    }
+    countryData.addRecord(newRecJSON).then((record) => {
+        //response.status(200);
+        //response.json(record);
+    }, (error) => {
+        response.status(500).json({message: "unable to add record!"});
+    });
+    
     
 });
 

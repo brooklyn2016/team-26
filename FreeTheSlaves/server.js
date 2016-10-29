@@ -1,6 +1,7 @@
   // We first require our express package
 var express = require('express');
 var bodyParser = require('body-parser');
+var path = require('path');
 
 // This package exports the function to create an express instance:
 var app = express();
@@ -16,9 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x
 // This middleware will activate for every request we make to 
 // any path starting with /assets;
 // it will check the 'static' folder for matching files 
-//app.use('/assets', express.static('www'));
-
-// Setup your routes here!
+app.use(express.static(path.join(__dirname, 'www')));
 
 app.get("/", function (request, response) { 
     // We have to pass a second parameter to specify the root directory

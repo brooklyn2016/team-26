@@ -39,19 +39,6 @@ div.ui-controlgroup-label {
 	font-size: 16px;
 }
 
-#welcome-screen{
-    background: url(https://www.freetheslaves.net/wp-content/themes/freetheslaves/images/map.jpg);
-	background-color: #444;
-       
-}
-
-.vertical-offset-100{
-    padding-top:100px;
-}
-
-
-
-
 /* Separators
 -----------------------------------------------------------------------------------------------------------*/
 /* Field contain separator (< 28em) */
@@ -758,4 +745,13 @@ button[disabled],
 	outline-width: 1px;
 	outline-style: auto;
 }
-			
+
+
+/* OUR STYLEZ
+-----------------------------------------------------------------------------------------------------------*/
+
+#ui-mobile-viewport{
+    background-image: url(https://www.freetheslaves.net/wp-content/themes/freetheslaves/images/map.jpg);
+	background-color: #444;
+       
+}

@@ -95,9 +95,21 @@ let exportedMethods = {
         
     addRecord(jsonObj) {
         
-        let newRecord = {
-              _id: uuid.v4()
-        };
+        
+        //var newRecord = { };
+        
+        //newRecord._id = uuid.v4();
+        
+        
+        
+        jsonObj["_id"] = uuid.v4();
+        
+        /*
+        if(!(jsonObj.community)) {
+            newRecord.community = jsonObj.community;   
+        } else {
+            return Promise.reject("Community not given");
+        }
         
         if(!jsonObj.pop) {
             newRecord["population"] = jsonObj.pop;   
@@ -105,11 +117,6 @@ let exportedMethods = {
             return Promise.reject("Population not given");
         }
         
-        if(!jsonObj.district) {
-            newRecord["district"] = jsonObj.district;   
-        } else {
-            return Promise.reject("District not given");
-        }
         
         if(!jsonObj.date) {
             newRecord["date"] = jsonObj.date;   
@@ -128,6 +135,7 @@ let exportedMethods = {
         } else {
             return Promise.reject("Section B not given");
         }
+        
         
         if(!jsonObj.C) {
             newRecord["C"] = jsonObj.C;   
@@ -158,50 +166,53 @@ let exportedMethods = {
         } else {
             return Promise.reject("Section G not given");
         }
-        
+        */
         if(jsonObj.country === "Senegal") {
             return Senegal().then((SenegalCollection) => {            
-                return SenegalCollection.insertOne(newRecord).then((newInsertInformation) => {
+                return SenegalCollection.insertOne(jsonObj).then((newInsertInformation) => {
                     return newInsertInformation.insertedId;
                 }).then((newId) => {
                     return this.getRecordById(jsonObj.country, newId);
                 });
             });
-        } else if(jsonObj.country === "India") {
-            return India().then((IndiaCollection) => {            
-                return IndiaCollection.insertOne(newRecord).then((newInsertInformation) => {
+        } 
+        if(jsonObj.country === "India") {
+            console.log("We made it!");
+            return India().then((IndiaCollection) => {
+                console.log("We made it v2!");
+                return IndiaCollection.insertOne(jsonObj).then((newInsertInformation) => {
                     return newInsertInformation.insertedId;
                 }).then((newId) => {
                     return this.getRecordById(jsonObj.country, newId);
                 });
             });
-        } else if(jsonObj.country === "Nepal") {
+        } if(jsonObj.country === "Nepal") {
             return Nepal().then((NepalCollection) => {            
-                return NepalCollection.insertOne(newRecord).then((newInsertInformation) => {
+                return NepalCollection.insertOne(jsonObj).then((newInsertInformation) => {
                     return newInsertInformation.insertedId;
                 }).then((newId) => {
                     return this.getRecordById(jsonObj.country, newId);
                 });
             });
-        } else if(jsonObj.country === "Ghana") {
+        } if(jsonObj.country === "Ghana") {
             return Ghana().then((GhanaCollection) => {            
-                return GhanaCollection.insertOne(newRecord).then((newInsertInformation) => {
+                return GhanaCollection.insertOne(jsonObj).then((newInsertInformation) => {
                     return newInsertInformation.insertedId;
                 }).then((newId) => {
                     return this.getRecordById(jsonObj.country, newId);
                 });
             });
-        } else if(jsonObj.country === "Haiti") {
+        } if(jsonObj.country === "Haiti") {
             return Haiti().then((HaitiCollection) => {            
-                return HaitiCollection.insertOne(newRecord).then((newInsertInformation) => {
+                return HaitiCollection.insertOne(jsonObj).then((newInsertInformation) => {
                     return newInsertInformation.insertedId;
                 }).then((newId) => {
                     return this.getRecordById(jsonObj.country, newId);
                 });
             });
-        } else if(jsonObj.country === "DRC") {
+        } if(jsonObj.country === "DRC") {
             return DRC().then((DRCCollection) => {            
-                return DRCCollection.insertOne(newRecord).then((newInsertInformation) => {
+                return DRCCollection.insertOne(jsonObj).then((newInsertInformation) => {
                     return newInsertInformation.insertedId;
                 }).then((newId) => {
                     return this.getRecordById(jsonObj.country, newId);

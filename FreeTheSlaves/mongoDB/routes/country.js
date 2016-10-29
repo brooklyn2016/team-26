@@ -28,8 +28,8 @@ router.get("/:country/:id", (req, res) => {
     });
 });
 
-router.post("/", (req, res) => {
-    
+router.post("/index.html", (req, res) => {
+    console.log(req.body);
     if(!req.body.country) {
         res.status(400).json({message: "country not given!"});
     } else {

@@ -5,6 +5,9 @@ var bodyParser = require('body-parser');
 // This package exports the function to create an express instance:
 var app = express();
 
+const data = require("./mongoDB/data");
+const countryData = data.country;
+
 // This is called 'adding middleware', or things that will help parse your request
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -22,10 +25,35 @@ app.get("/", function (request, response) {
     response.sendFile("./www/index.html", { root: __dirname });
 });
 
-app.post("index.html", function(request, response) {
+app.get("/cool.html/:country", function(request, response) {
+
+    if(!request.params.country) {
+        response.status(400).json({message: "country not given!"});
+    } else {
+    
+        countryData.getAllRecords(request.params.country).then((records) => {
+            response.json(records);
+        }, (error) => {
+            response.status(500).json({message: "unable to retrieve records!"});
+        });
+    }
     
 });
 
+app.post("/index.html", function(request, response) {
+
+    if(!request.body.country) {
+        response.status(400).json({message: "country not given!"});
+    } else {
+    
+        countryData.addRecord(request.body).then((record) => {
+            response.json(record);
+        }, (error) => {
+            response.status(500).json({message: "unable to add record!"});
+        });
+    }
+    
+});
 
 
 // We can now navigate to localhost:3000

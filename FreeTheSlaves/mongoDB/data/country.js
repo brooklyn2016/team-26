@@ -210,7 +210,10 @@ let exportedMethods = {
 
 
     },
-    removeRecipe(id) {
+    removeRecord(id) {
+        
+        
+        
         return recipes().then((recipeCollection) => {
             return recipeCollection.removeOne({ _id: id }).then((deletionInfo) => {
                 if (deletionInfo.deletedCount === 0) {

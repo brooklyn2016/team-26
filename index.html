@@ -48,4 +48,33 @@
 
 	</body>
 </html>
+<script>
+	$(document).ready(function(){
+		$('#submit').click('on',function(){
+			var fData = new FormData();
+			//Question 1			
+			fData.append( 'Completely', $("input:radio[name='radio-choice-h-2']:checked").val());
+			for (var pair of fData.entries()) {
+    			console.log(pair[0]+ ', ' + pair[1]); 
+			}
+			//Upload file			
+			$.ajax({
+				type: 'POST',
+				dataType: 'text',				
+				url: 'index.html', 				
+				crossDomain: true,
+				data: fData,
+				processData: false,
+				contentType: false,
+				cache: false,
+				success: function(responce){
+					console.log("Success");
+				},
+				error: function(responce){
+					console.log(responce);
+				}				
+			});
+		});
+	});
+</script>
 

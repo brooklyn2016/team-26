@@ -83,7 +83,9 @@ router.put("/:recipeId/:commentId", (req, res) => {
     
 });
 
-router.delete("/:id", (req, res) => {
+
+
+router.delete("/:country/:id", (req, res) => {
 
     return commentsData.removeComment(req.params.id)
         .then(() => {

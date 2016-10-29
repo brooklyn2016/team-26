@@ -6,8 +6,11 @@ const configureRoutes = require("./mongoDB/routes");
 app.use(bodyParser.json());
 configureRoutes(app);
 
+//app.use("/", express.static('www'));
+
 app.get("/", function (request, response) {
-    response.render("../index.html");
+    console.log("Hello!!");
+    response.sendFile("./index.html", {root: __dirname });
 });
 
 app.listen(3000, () => {

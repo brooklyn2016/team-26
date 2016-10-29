@@ -22,6 +22,11 @@ app.get("/", function (request, response) {
     response.sendFile("./www/index.html", { root: __dirname });
 });
 
+app.post("index.html", function(request, response) {
+    
+});
+
+
 
 // We can now navigate to localhost:3000
 app.listen(3000, function () {

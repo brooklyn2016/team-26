@@ -105,15 +105,15 @@ let exportedMethods = {
         }
         
         if(!jsonObj.district) {
-            newRecord["F"] = jsonObj.F;   
+            newRecord["district"] = jsonObj.district;   
         } else {
-            return Promise.reject("Section F not given");
+            return Promise.reject("District not given");
         }
         
-        if(!jsonObj.G) {
-            newRecord["G"] = jsonObj.G;   
+        if(!jsonObj.date) {
+            newRecord["date"] = jsonObj.date;   
         } else {
-            return Promise.reject("Section G not given");
+            return Promise.reject("Date not given");
         }        
         
         if(!jsonObj.A) {
@@ -157,32 +157,6 @@ let exportedMethods = {
         } else {
             return Promise.reject("Section G not given");
         }
-        
-        
-        
-            /*
-            let newRecipe = {
-                _id: uuid.v4()
-            }
-            
-            if(updatedRecipe.title) {
-                newRecipe["title"] = recipeObj.title;  
-            } else {
-                return Promise.reject("No title given");
-            }
-            
-            if(updatedRecipe.ingredients) {
-                newRecipe["ingredients"] = recipeObj.ingredients;  
-            }
-        
-            if(updatedRecipe.steps) {
-                newRecipe["steps"] = recipeObj.steps;  
-            }
-        
-            if(updatedRecipe.comments) {
-                newRecipe["comments"] = recipeObj.comments;  
-            }            
-            */
         
         if(jsonObj.country === "Senegal") {
             return Senegal().then((SenegalCollection) => {            

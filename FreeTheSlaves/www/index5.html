@@ -14,27 +14,28 @@
 		<link rel="stylesheet" href="css/freeTheSlaves.css"/>
 	</head>
 	<body>
-		<form action="index.html" method="post">
+		<form>
 			<h3 class="ui-bar ui-bar-a ui-corner-all">
-				A. Overall achievement: Slavery has been ended in this location
+			E. Reintegration of survivors:
 			</h3>
-			<!--Part A question 1-->
+			<!--Part E question 24-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">1</label>
+					<label for="num">24</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
-						Traffickers, whether from the village or from outside the village, cannot operate any more.
+						Survivors of slavery receive appropriate government compensation according to
+						law.
 					</label>
 				</div>
 				<div class="col-xs-3">
 					<fieldset data-role="controlgroup" data-type="horizontal">
 					    <input type="radio" name="question1" value="2" id="question1.1"checked="checked">
 					    <label for="question1.1">Completely <br/>True</label>
-					    <input type="radio" name="question1" id="question1.2" value="1">
+					    <input type="radio" name="question1" value="1" id="question1.2">
 					    <label for="question1.2">Partially <br/>True</label>
-					    <input type="radio" name="question1" id="question1.3" value="0">
+					    <input type="radio" name="question1" value="0" id="question1.3">
 					    <label for="question1.3">Completely <br/>Untrue</label>
 					</fieldset>
 				</div>
@@ -43,14 +44,14 @@
 		    		<textarea height="10" width="10" name="textarea-1" id="textarea-1"></textarea>
 				</div>
 			</div>
-			<!--Part A question 2-->
+			<!--Part E question 25-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">2</label>
+					<label for="num">25</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
-						No one residing in this village is in any form of slavery.
+						Child survivors of slavery are attending school.
 					</label>
 				</div>
 				<div class="col-xs-3">
@@ -68,14 +69,15 @@
 		    		<textarea height="10" width="10" name="textarea-2" id="textarea-2"></textarea>
 				</div>
 			</div>
-			<!--Part A question 3-->
+			<!--Part E question 26-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">3</label>
+					<label for="num">26</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
-						People who migrate from this community for work are NOT being trafficked.
+						Adult survivors of slavery are earning a livelihood comparable to others in this
+						community. 
 					</label>
 				</div>
 				<div class="col-xs-3">
@@ -93,14 +95,14 @@
 		    		<textarea height="10" width="10" name="textarea-3" id="textarea-3"></textarea>
 				</div>
 			</div>
-			<!--Part A question 4-->
+			<!--Part E question 27-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">4</label>
+					<label for="num">27</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
-						None of the children in this village are being exploited for commercial sex.
+						Survivors of slavery are accessing essential health care.
 					</label>
 				</div>
 				<div class="col-xs-3">
@@ -118,10 +120,10 @@
 		    		<textarea height="10" width="10" name="textarea-4" id="textarea-4"></textarea>
 				</div>
 			</div>
-			<!--Part A question 5-->
+			<!--Part E question 27-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">5</label>
+					<label for="num">27</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
@@ -143,52 +145,74 @@
 		    		<textarea height="10" width="10" name="textarea-5" id="textarea-5"></textarea>
 				</div>
 			</div>
+			<!--Part E question 28-->
+			<div class="row">
+				<div class="col-xs-1">
+					<label for="num">28</label>
+				</div>
+				<div class="col-xs-2">
+					<label for="question">
+						Survivors of slavery can access support for psychological trauma.
+					</label>
+				</div>
+				<div class="col-xs-3">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+					    <input type="radio" name="question6" id="question6.1" value="2" checked="checked">
+					    <label for="question6.1">Completely <br/>True</label>
+					    <input type="radio" name="question6" id="question6.2" value="1">
+					    <label for="question6.2">Partially <br/>True</label>
+					    <input type="radio" name="question6" id="question6.3" value="0">
+					    <label for="question6.3">Completely <br/>Untrue</label>
+					</fieldset>
+				</div>
+				<div class="col-xs-6">
+					<label for="textarea">Comments</label>
+		    		<textarea height="10" width="10" name="textarea-6" id="textarea-6"></textarea>
+				</div>
+			</div>
 			<input type="submit" name="submit" id="submit">
 		</form>
 	</body>
-
-
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
     <script type="text/javascript">
         app.initialize();
     </script>
-
 </html>
 <script>
- 	$(document).ready(function(){
-		$('#submit').click('on',function(){
- 			var fData = {};
-			fData = new Object();
-			//FIX THIS BEFORE DEMO!!!!!!!!!!!!!!!
-			fData['country'] = 'USA';
-			fData['community'] = "Da Hood";
-			fData['population'] = "12311";
-			fData['date'] = "12/31/11";
-			fData['A'] = new Object();
-			fData['A']['1'] = [$("input:radio[name='question1']:checked").val(),$('#textarea-1').val()];
-			fData['A']['2'] = [$("input:radio[name='question2']:checked").val(),$('#textarea-2').val()];
-			fData['A']['3'] = [$("input:radio[name='question3']:checked").val(),$('#textarea-3').val()];
-			fData['A']['4'] = [$("input:radio[name='question4']:checked").val(),$('#textarea-4').val()];
-			fData['A']['5'] = [$("input:radio[name='question5']:checked").val(),$('#textarea-5').val()];
-			var jsonData = JSON.stringify(fData);
- 			//Upload file
- 			$.ajax({
- 				type: 'POST',
- 				dataType: 'TEXT',
- 				url: 'index.html',
- 				crossDomain: true,
- 				data: jsonData,
- 				processData: false,
- 				contentType: false,
- 				cache: false,
- 				success: function(responce){
- 					console.log("Success");
- 				},
- 				error: function(responce){
- 					console.log("Error");
- 				}
- 			});
- 		});
- 	});
-</script>
+// 	$(document).ready(function(){
+// 		$('#submit').click('on',function(){
+// 			var fData = new FormData();			
+// 			//Question 1			
+// 			fData.append( 'PartAQuestion1', $("input:radio[name='question1']:checked").val());
+// 			//Question 2			
+// 			fData.append( 'PartAQuestion2', $("input:radio[name='question2']:checked").val());
+// 			//Question 3			
+// 			fData.append( 'PartAQuestion3', $("input:radio[name='question3']:checked").val());
+// 			//Question 4			
+// 			fData.append( 'PartAQuestion4', $("input:radio[name='question4']:checked").val());
+// 			//Question 5			
+// 			fData.append( 'PartAQuestion5', $("input:radio[name='question5']:checked").val());
+// 			for (var pair of fData.entries()) {
+//     			console.log(pair[0]+ ', ' + pair[1]);
+// 			}
+// 			//Upload file
+// 			$.ajax({
+// 				type: 'POST',
+// 				dataType: 'JSON',
+// 				url: 'index.html',
+// 				crossDomain: true,
+// 				data: fData,
+// 				processData: false,
+// 				contentType: false,
+// 				cache: false,
+// 				success: function(responce){
+// 					console.log("Success");
+// 				},
+// 				error: function(responce){
+// 					console.log("Error");
+// 				}
+// 			});
+// 		});
+// 	});
+// </script>

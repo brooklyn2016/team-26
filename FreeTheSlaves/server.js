@@ -37,7 +37,7 @@ app.get("/cool.html/:country", function(request, response) {
             response.status(500).json({message: "unable to retrieve records!"});
         });
     }
-    
+
 });
 
 app.post("/index.html", function(request, response) {

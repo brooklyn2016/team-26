@@ -211,17 +211,64 @@ let exportedMethods = {
 
 
     },
-        /*
-    removeRecord(id) {
         
-        return record().then((recipeCollection) => {
-            return recipeCollection.removeOne({ _id: id }).then((deletionInfo) => {
-                if (deletionInfo.deletedCount === 0) {
-                    return Promise.reject("Could not delete recipe with id of ${id}")
-                }
+    removeRecord(country, id) {
+
+        if(country === "Senegal") {
+            return Senegal().then((SenegalCollection) => {
+                return SenegalCollection.removeOne({ _id: id }).then((deletionInfo) => {
+                    if (deletionInfo.deletedCount === 0) {
+                        return Promise.reject("Could not delete record")
+                    }
+                });
             });
-        });
+        } else if(country === "India") {
+            return India().then((IndiaCollection) => {
+                return IndiaCollection.removeOne({ _id: id }).then((deletionInfo) => {
+                    if (deletionInfo.deletedCount === 0) {
+                        return Promise.reject("Could not delete record")
+                    }
+                });
+            });
+        } else if(country === "Nepal") {
+            return Nepal().then((NepalCollection) => {
+                return NepalCollection.removeOne({ _id: id }).then((deletionInfo) => {
+                    if (deletionInfo.deletedCount === 0) {
+                        return Promise.reject("Could not delete record")
+                    }
+                });
+            });
+        } else if(country === "Ghana") {
+            return Ghana().then((GhanaCollection) => {
+                return GhanaCollection.removeOne({ _id: id }).then((deletionInfo) => {
+                    if (deletionInfo.deletedCount === 0) {
+                        return Promise.reject("Could not delete record")
+                    }
+                });
+            });
+        } else if(country === "Haiti") {
+            return Haiti().then((HaitiCollection) => {
+                return HaitiCollection.removeOne({ _id: id }).then((deletionInfo) => {
+                    if (deletionInfo.deletedCount === 0) {
+                        return Promise.reject("Could not delete record")
+                    }
+                });
+            });
+        } else if(country === "DRC") {
+            return DRC().then((DRCCollection) => {
+                return DRCCollection.removeOne({ _id: id }).then((deletionInfo) => {
+                    if (deletionInfo.deletedCount === 0) {
+                        return Promise.reject("Could not delete record")
+                    }
+                });
+            });
+        }
+
+
     },
+    
+    
+    /*
     updateRecipe(id, recipeObj) {
         return recipes().then((recipeCollection) => { 
             

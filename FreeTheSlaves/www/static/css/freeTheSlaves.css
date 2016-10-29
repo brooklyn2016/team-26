@@ -239,7 +239,7 @@ html body .ui-group-theme-a .ui-bar-inherit {
 .ui-overlay-a,
 .ui-page-theme-a,
 .ui-page-theme-a .ui-panel-wrapper {
-	background-color: #e2e0dd /*{a-page-background-color}*/;
+	background-color: orange /*{a-page-background-color}*/;
 	border-color: #cccccc /*{a-page-border}*/;
 	color: #000000 /*{a-page-color}*/;
 	text-shadow: 0 /*{a-page-shadow-x}*/ 1px /*{a-page-shadow-y}*/ 0 /*{a-page-shadow-radius}*/ #eeeeee /*{a-page-shadow-color}*/;
@@ -752,4 +752,5 @@ button[disabled],
 #login-box{
 	float:none; 
 	margin:0 auto;
+    margin-top: 200px;
 }

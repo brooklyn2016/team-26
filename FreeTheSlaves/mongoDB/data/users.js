@@ -44,9 +44,34 @@ let exportedMethods = {
 
     },
     
-    authenticateUser(userName, passWord) {
+    getAllUsers() {
+        return users().then((userCollection) => {
+            return userCollection.find({}).toArray();
+        });
+    },
+        
+    authenticateUser(username, password) {
+        
+        console.log("Username: " + typeof username);
+        if(username == undefined)
+            return Promise.reject("Username not given");
+
+        if(password == undefined)
+            return Promise.reject("Password not given");
     
-    
+        return users().then((usersCollection) => {
+            return usersCollection.findOne({ userName: username }).then((user) => {
+                if (!user) {
+                    return Promise.reject("Username does not exist");
+                } else {
+                    if(user.passWord !== password) {
+                        return Promise.reject("Wrong Password");
+                    } else {
+                        return true;   
+                    }
+                }
+            });
+        });
     },
     
 }

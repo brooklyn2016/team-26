@@ -76,9 +76,17 @@ app.delete("/dbcall/:country/:id", function(request, response) {
 
 });
 
+app.get("/users", function(request, response) {
 
+    usersData.getAllUsers().then((users) => {
+        response.json(users);
+    }, (error) => {
+        response.status(500).json({message: "unable to find users!"});
+    });
+    
+});
 
-app.post("/users", function(request, response) {
+app.post("/addusers", function(request, response) {
 
     if(!request.body.username) {
         response.status(400).json({message: "Username not given!"});
@@ -95,8 +103,21 @@ app.post("/users", function(request, response) {
     
 });
 
+app.post("/authuser", function(request, response) {
 
-
+    if(!request.body.username) {
+        response.status(400).json({message: "Username not given!"});
+    } else if(!request.body.password) {
+        response.status(400).json({message: "Password not given!"});
+    } else {
+        usersData.authenticateUser(request.body.username, request.body.password).then((success) => {
+            response.json(success);
+        }, (error) => {
+            response.status(500).json({message: error});
+        });
+    }
+});
+    
 // We can now navigate to localhost:3000
 app.listen(3000, function () {
     console.log('Your server is now listening on port 3000! \nNavigate to http://localhost:3000 to access it');

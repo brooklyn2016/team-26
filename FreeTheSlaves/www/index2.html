@@ -10,12 +10,12 @@
 
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+		<script src="js/cookie.js"></script>
 		<link rel="stylesheet" href="css/freeTheSlaves.css"/>
 	</head>
 	<body>
 		<div style='margin:70px; position:relative'>
-		<form>
+		<form method="post" action="index3.html">
 			<h3 class="ui-bar ui-bar-a ui-corner-all">
 				B. Trafficking and slavery public awareness:
 			</h3>
@@ -240,22 +240,27 @@
 <script>
  	$(document).ready(function(){
 		$('#submit').click('on',function(){
- 			var fData = {};
-			fData = new Object();
-			//FIX THIS BEFORE DEMO!!!!!!!!!!!!!!!
+ 			var fData = JSON.parse(Cookies.get("jsonData"));
+ 			Cookies.remove('jsonData');
+ 			//var fData = {};
+			//fData = new Object();
+			/*FIX THIS BEFORE DEMO!!!!!!!!!!!!!!!
 			fData['country'] = 'USA';
 			fData['community'] = "Da Hood";
 			fData['population'] = "12311";
-			fData['date'] = "12/31/11";
-			fData['A'] = new Object();
-			fData['A']['1'] = [$("input:radio[name='question1']:checked").val(),$('#textarea-1').val()];
-			fData['A']['2'] = [$("input:radio[name='question2']:checked").val(),$('#textarea-2').val()];
-			fData['A']['3'] = [$("input:radio[name='question3']:checked").val(),$('#textarea-3').val()];
-			fData['A']['4'] = [$("input:radio[name='question4']:checked").val(),$('#textarea-4').val()];
-			fData['A']['5'] = [$("input:radio[name='question5']:checked").val(),$('#textarea-5').val()];
+			fData['date'] = "12/31/11";*/
+			fData['B'] = new Object();
+			fData['B']['1'] = [$("input:radio[name='question1']:checked").val(),$('#textarea-1').val()];
+			fData['B']['2'] = [$("input:radio[name='question2']:checked").val(),$('#textarea-2').val()];
+			fData['B']['3'] = [$("input:radio[name='question3']:checked").val(),$('#textarea-3').val()];
+			fData['B']['4'] = [$("input:radio[name='question4']:checked").val(),$('#textarea-4').val()];
+			fData['B']['5'] = [$("input:radio[name='question5']:checked").val(),$('#textarea-5').val()];
 			var jsonData = JSON.stringify(fData);
+			Cookies.set("jsonData", JSON.stringify(jsonData));
+			console.log(jsonData);
+
  			//Upload file
- 			$.ajax({
+ 			/*$.ajax({
  				type: 'POST',
  				dataType: 'TEXT',
  				url: 'index.html',
@@ -270,7 +275,7 @@
  				error: function(responce){
  					console.log("Error");
  				}
- 			});
+ 			});8?
  		});
  	});
 </script>

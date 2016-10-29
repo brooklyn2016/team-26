@@ -10,12 +10,12 @@
 
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+		<script src="js/cookie.js"></script>
 		<link rel="stylesheet" href="css/freeTheSlaves.css"/>
 	</head>
 	<body>
 		<div style='margin:70px; position:relative'>
-		<form>
+		<form form method="post" action="index3.html">
 			<h3 class="ui-bar ui-bar-a ui-corner-all">
         C. Rights education:
 			</h3>
@@ -190,13 +190,8 @@ care and education?)
 <script>
  	$(document).ready(function(){
 		$('#submit').click('on',function(){
- 			var fData = {};
-			fData = new Object();
-			//FIX THIS BEFORE DEMO!!!!!!!!!!!!!!!
-			fData['country'] = 'USA';
-			fData['community'] = "Da Hood";
-			fData['population'] = "12311";
-			fData['date'] = "12/31/11";
+ 			var fData = JSON.parse(Cookies.get("jsonData"));
+ 			Cookies.remove('jsonData');			
 			fData['A'] = new Object();
 			fData['A']['1'] = [$("input:radio[name='question1']:checked").val(),$('#textarea-1').val()];
 			fData['A']['2'] = [$("input:radio[name='question2']:checked").val(),$('#textarea-2').val()];
@@ -204,23 +199,7 @@ care and education?)
 			fData['A']['4'] = [$("input:radio[name='question4']:checked").val(),$('#textarea-4').val()];
 			fData['A']['5'] = [$("input:radio[name='question5']:checked").val(),$('#textarea-5').val()];
 			var jsonData = JSON.stringify(fData);
- 			//Upload file
- 			$.ajax({
- 				type: 'POST',
- 				dataType: 'TEXT',
- 				url: 'index.html',
- 				crossDomain: true,
- 				data: jsonData,
- 				processData: false,
- 				contentType: false,
- 				cache: false,
- 				success: function(responce){
- 					console.log("Success");
- 				},
- 				error: function(responce){
- 					console.log("Error");
- 				}
- 			});
+ 			Cookies.set("jsonData", JSON.stringify(jsonData));
  		});
  	});
 </script>

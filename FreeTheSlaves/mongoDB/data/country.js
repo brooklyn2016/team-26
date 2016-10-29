@@ -92,6 +92,7 @@ let exportedMethods = {
         }
     
     },
+        
     addRecord(jsonObj) {
         
         let newRecord = {
@@ -210,11 +211,10 @@ let exportedMethods = {
 
 
     },
+        /*
     removeRecord(id) {
         
-        
-        
-        return recipes().then((recipeCollection) => {
+        return record().then((recipeCollection) => {
             return recipeCollection.removeOne({ _id: id }).then((deletionInfo) => {
                 if (deletionInfo.deletedCount === 0) {
                     return Promise.reject("Could not delete recipe with id of ${id}")
@@ -251,7 +251,9 @@ let exportedMethods = {
                 return this.getRecipeById(id);
             });
         });
-    },        
+    },   
+    
+    */
 }
 
 module.exports = exportedMethods;

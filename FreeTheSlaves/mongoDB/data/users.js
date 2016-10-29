@@ -52,7 +52,6 @@ let exportedMethods = {
         
     authenticateUser(username, password) {
         
-        console.log("Username: " + typeof username);
         if(username == undefined)
             return Promise.reject("Username not given");
 

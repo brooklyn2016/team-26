@@ -192,12 +192,12 @@ care and education?)
 		$('#submit').click('on',function(){
  			var fData = JSON.parse(Cookies.get("jsonData"));
  			Cookies.remove('jsonData');			
-			fData['A'] = new Object();
-			fData['A']['1'] = [$("input:radio[name='question1']:checked").val(),$('#textarea-1').val()];
-			fData['A']['2'] = [$("input:radio[name='question2']:checked").val(),$('#textarea-2').val()];
-			fData['A']['3'] = [$("input:radio[name='question3']:checked").val(),$('#textarea-3').val()];
-			fData['A']['4'] = [$("input:radio[name='question4']:checked").val(),$('#textarea-4').val()];
-			fData['A']['5'] = [$("input:radio[name='question5']:checked").val(),$('#textarea-5').val()];
+			fData['C'] = new Object();
+			fData['C']['1'] = [$("input:radio[name='question1']:checked").val(),$('#textarea-1').val()];
+			fData['C']['2'] = [$("input:radio[name='question2']:checked").val(),$('#textarea-2').val()];
+			fData['C']['3'] = [$("input:radio[name='question3']:checked").val(),$('#textarea-3').val()];
+			fData['C']['4'] = [$("input:radio[name='question4']:checked").val(),$('#textarea-4').val()];
+			fData['C']['5'] = [$("input:radio[name='question5']:checked").val(),$('#textarea-5').val()];
 			var jsonData = JSON.stringify(fData);
  			Cookies.set("jsonData", JSON.stringify(jsonData));
  		});

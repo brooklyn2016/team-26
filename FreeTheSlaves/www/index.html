@@ -1,46 +1,184 @@
-<!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <title>Hello World</title>
-    </head>
-    <body>
-        <div class="app">
-            <h1>PhoneGap</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
-        </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
-    </body>
+	<head>
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+		<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+		<!-- Latest compiled and minified JavaScript -->
+
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	</head>
+	<body>
+		<form>			
+			<h3 class="ui-bar ui-bar-a ui-corner-all">
+				A. Overall achievement: Slavery has been ended in this location
+			</h3>
+			<!--Part A question 1-->
+			<div class="row">
+				<div class="col-xs-1">
+					<label for="num">1</label>
+				</div>
+				<div class="col-xs-2">
+					<label for="question">
+						Traffickers, whether from the village or from outside the village, cannot operate any more.
+					</label>
+				</div>
+				<div class="col-xs-3">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+					    <input type="radio" name="question1" value="true" checked="checked">
+					    <label for="radio-choice-h-2a">Completely <br/>True</label>
+					    <input type="radio" name="question1" value="partially">
+					    <label for="radio-choice-h-2b">Partially <br/>True</label>
+					    <input type="radio" name="question1" value="untrue">
+					    <label for="radio-choice-h-2c">Completely <br/>Untrue</label>
+					</fieldset>
+				</div>
+				<div class="col-xs-6">
+					<label for="textarea">Comments</label>
+		    		<textarea height="10" width="10" name="textarea-2" id="textarea-2"></textarea>
+				</div>
+			</div>
+			<!--Part A question 2-->
+			<div class="row">
+				<div class="col-xs-1">
+					<label for="num">1</label>
+				</div>
+				<div class="col-xs-2">
+					<label for="question">
+						Traffickers, whether from the village or from outside the village, cannot operate any more.
+					</label>
+				</div>
+				<div class="col-xs-3">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+					    <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
+					    <label for="radio-choice-h-2a">Completely <br/>True</label>
+					    <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
+					    <label for="radio-choice-h-2b">Partially <br/>True</label>
+					    <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2c" value="other">
+					    <label for="radio-choice-h-2c">Completely <br/>Untrue</label>
+					</fieldset>
+				</div>
+				<div class="col-xs-6">
+					<label for="textarea">Comments</label>
+		    		<textarea height="10" width="10" name="textarea-2" id="textarea-2"></textarea>
+				</div>
+			</div>
+			<!--Part A question 3-->
+			<div class="row">
+				<div class="col-xs-1">
+					<label for="num">1</label>
+				</div>
+				<div class="col-xs-2">
+					<label for="question">
+						Traffickers, whether from the village or from outside the village, cannot operate any more.
+					</label>
+				</div>
+				<div class="col-xs-3">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+					    <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
+					    <label for="radio-choice-h-2a">Completely <br/>True</label>
+					    <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
+					    <label for="radio-choice-h-2b">Partially <br/>True</label>
+					    <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2c" value="other">
+					    <label for="radio-choice-h-2c">Completely <br/>Untrue</label>
+					</fieldset>
+				</div>
+				<div class="col-xs-6">
+					<label for="textarea">Comments</label>
+		    		<textarea height="10" width="10" name="textarea-2" id="textarea-2"></textarea>
+				</div>
+			</div>
+			<!--Part A question 4-->
+			<div class="row">
+				<div class="col-xs-1">
+					<label for="num">1</label>
+				</div>
+				<div class="col-xs-2">
+					<label for="question">
+						Traffickers, whether from the village or from outside the village, cannot operate any more.
+					</label>
+				</div>
+				<div class="col-xs-3">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+					    <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
+					    <label for="radio-choice-h-2a">Completely <br/>True</label>
+					    <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
+					    <label for="radio-choice-h-2b">Partially <br/>True</label>
+					    <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2c" value="other">
+					    <label for="radio-choice-h-2c">Completely <br/>Untrue</label>
+					</fieldset>
+				</div>
+				<div class="col-xs-6">
+					<label for="textarea">Comments</label>
+		    		<textarea height="10" width="10" name="textarea-2" id="textarea-2"></textarea>
+				</div>
+			</div>
+			<!--Part A question 5-->
+			<div class="row">
+				<div class="col-xs-1">
+					<label for="num">1</label>
+				</div>
+				<div class="col-xs-2">
+					<label for="question">
+						Traffickers, whether from the village or from outside the village, cannot operate any more.
+					</label>
+				</div>
+				<div class="col-xs-3">
+					<fieldset data-role="controlgroup" data-type="horizontal">
+					    <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
+					    <label for="radio-choice-h-2a">Completely <br/>True</label>
+					    <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
+					    <label for="radio-choice-h-2b">Partially <br/>True</label>
+					    <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2c" value="other">
+					    <label for="radio-choice-h-2c">Completely <br/>Untrue</label>
+					</fieldset>
+				</div>
+				<div class="col-xs-6">
+					<label for="textarea">Comments</label>
+		    		<textarea height="10" width="10" name="textarea-2" id="textarea-2"></textarea>
+				</div>
+			</div>
+		</form>
+	</body>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
+
 </html>
+<script>
+	$(document).ready(function(){
+		$('#submit').click('on',function(){
+			var fData = new FormData();
+			//Question 1			
+			fData.append( 'Completely', $("input:radio[name='radio-choice-h-2']:checked").val());
+			for (var pair of fData.entries()) {
+    			console.log(pair[0]+ ', ' + pair[1]); 
+			}
+			//Upload file			
+			$.ajax({
+				type: 'POST',
+				dataType: 'text',				
+				url: 'index.html', 				
+				crossDomain: true,
+				data: fData,
+				processData: false,
+				contentType: false,
+				cache: false,
+				success: function(responce){
+					console.log("Success");
+				},
+				error: function(responce){
+					console.log(responce);
+				}				
+			});
+		});
+	});
+</script>
+

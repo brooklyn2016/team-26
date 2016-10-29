@@ -10,6 +10,8 @@ const data = require("./mongoDB/data");
 const usersData = data.Users;
 const countryData = data.country;
 
+var newRecJSON = { };
+
 // This is called 'adding middleware', or things that will help parse your request
 app.use(bodyParser.json()); // for parsing application/json
 app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
@@ -26,6 +28,23 @@ app.get("/", function (request, response) {
     response.sendFile("/www/welcome.html", { root: __dirname });
 });
 
+
+app.get("/allelsefails", function (request, response) { 
+    // We have to pass a second parameter to specify the root directory
+    // __dirname is a global variable representing the file directory you are currently in
+    response.sendFile("/www/allelsefails.html", { root: __dirname });
+});
+
+app.post("/allelsefails", function (request, response) { 
+    // We have to pass a second parameter to specify the root directory
+    // __dirname is a global variable representing the file directory you are currently in
+    console.log(request.body);
+});
+
+
+
+
+
 app.get("/index.html", function (request, response) { 
     // We have to pass a second parameter to specify the root directory
     // __dirname is a global variable representing the file directory you are currently in
@@ -35,6 +54,8 @@ app.get("/index.html", function (request, response) {
 app.post("/index.html", function (request, response) { 
     // We have to pass a second parameter to specify the root directory
     // __dirname is a global variable representing the file directory you are currently in
+    console.log(request.body);
+    newRecJSON["A"] = "AAAA";
     response.sendFile("/www/index.html", { root: __dirname });
 });
 
@@ -47,6 +68,7 @@ app.get("/index2.html", function (request, response) {
 app.post("/index2.html", function (request, response) { 
     // We have to pass a second parameter to specify the root directory
     // __dirname is a global variable representing the file directory you are currently in
+    newRecJSON["A"] = request.body;
     response.sendFile("/www/index2.html", { root: __dirname });
 });
 
@@ -59,6 +81,7 @@ app.get("/index3.html", function (request, response) {
 app.post("/index3.html", function (request, response) { 
     // We have to pass a second parameter to specify the root directory
     // __dirname is a global variable representing the file directory you are currently in
+    newRecJSON["B"] = request.body;
     response.sendFile("/www/index3.html", { root: __dirname });
 });
 
@@ -71,6 +94,7 @@ app.get("/index4.html", function (request, response) {
 app.post("/index4.html", function (request, response) { 
     // We have to pass a second parameter to specify the root directory
     // __dirname is a global variable representing the file directory you are currently in
+    newRecJSON["C"] = request.body;
     response.sendFile("/www/index4.html", { root: __dirname });
 });
 
@@ -83,6 +107,7 @@ app.get("/index5.html", function (request, response) {
 app.post("/index5.html", function (request, response) { 
     // We have to pass a second parameter to specify the root directory
     // __dirname is a global variable representing the file directory you are currently in
+    newRecJSON["D"] = request.body;
     response.sendFile("/www/index5.html", { root: __dirname });
 });
 
@@ -95,6 +120,7 @@ app.get("/index6.html", function (request, response) {
 app.post("/index6.html", function (request, response) { 
     // We have to pass a second parameter to specify the root directory
     // __dirname is a global variable representing the file directory you are currently in
+    newRecJSON["E"] = request.body;
     response.sendFile("/www/index6.html", { root: __dirname });
 });
 
@@ -107,6 +133,7 @@ app.get("/index7.html", function (request, response) {
 app.post("/index7.html", function (request, response) { 
     // We have to pass a second parameter to specify the root directory
     // __dirname is a global variable representing the file directory you are currently in
+    newRecJSON["F"] = request.body;
     response.sendFile("/www/index7.html", { root: __dirname });
 });
 
@@ -134,13 +161,15 @@ app.get("/dbcall/:country/:id", function(request, response) {
     });
 });
 
-app.post("/index.html", function(request, response) {
+app.post("/postRecord", function(request, response) {
 
+    
+    newRecJSON["G"] = request.body;
     if(!request.body.country) {
         response.status(400).json({message: "country not given!"});
     } else {
     
-        countryData.addRecord(request.body).then((record) => {
+        countryData.addRecord(newRecJSON).then((record) => {
             response.json(record);
         }, (error) => {
             response.status(500).json({message: "unable to add record!"});
@@ -197,6 +226,7 @@ app.post("/selectcountry", function(request, response) {
         console.log("Supp v2!!!");
         usersData.authenticateUser(request.body.username, request.body.password).then((success) => {
             if(success === true) {
+                newRecJSON["SubmittedBy"] = request.body.username;
                 response.sendFile("www/informationindex.html", {root: __dirname });
             }
             //response.json(success);

@@ -192,9 +192,9 @@
 			fData['A']['4'] = [$("input:radio[name='question4']:checked").val(),$('#textarea-4').val()];
 			fData['A']['5'] = [$("input:radio[name='question5']:checked").val(),$('#textarea-5').val()];
 			var jsonData = JSON.stringify(fData);
- 			Cookies.set("jsonData", JSON.stringify(jsonData));
+ 			//Cookies.set("jsonData", JSON.stringify(jsonData));
  			//Upload file
- 			/*$.ajax({
+ 			$.ajax({
  				type: 'POST',
  				dataType: 'TEXT',
  				url: 'index.html',
@@ -209,7 +209,7 @@
  				error: function(responce){
  					console.log("Error");
  				}
- 			});*/
+ 			});
  		});
  	});
 </script>

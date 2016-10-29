@@ -200,6 +200,7 @@ care and education?)
 			fData['C']['5'] = [$("input:radio[name='question5']:checked").val(),$('#textarea-5').val()];
 			var jsonData = JSON.stringify(fData);
  			Cookies.set("jsonData", JSON.stringify(jsonData));
+ 			console.log(jsonData);
  		});
  	});
 </script>

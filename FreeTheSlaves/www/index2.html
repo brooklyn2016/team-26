@@ -258,10 +258,12 @@
 			fData['B']['3'] = [$("input:radio[name='question3']:checked").val(),$('#textarea-3').val()];
 			fData['B']['4'] = [$("input:radio[name='question4']:checked").val(),$('#textarea-4').val()];
 			fData['B']['5'] = [$("input:radio[name='question5']:checked").val(),$('#textarea-5').val()];
+			fData['B']['6'] = [$("input:radio[name='question6']:checked").val(),$('#textarea-6').val()];
+			fData['B']['7'] = [$("input:radio[name='question7']:checked").val(),$('#textarea-7').val()];
 			var jsonData = JSON.stringify(fData);
 			Cookies.set("jsonData", JSON.stringify(jsonData));
-			console.log("here is json");
-			console.log(jsonData);
+			//console.log("here is json");
+			//console.log(jsonData);
 			
  			
 
@@ -287,6 +289,7 @@
  				error: function(responce){
  					console.log("Error");
  				}
- 			});*/ 		});
+ 			});*/ 	
+ 		});
  	});
 </script>

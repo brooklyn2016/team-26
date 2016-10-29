@@ -40,7 +40,7 @@
 				</div>
 				<div class="col-xs-6">
 					<label for="textarea">Comments</label>
-		    		<textarea height="10" width="10" name="textarea-2" id="textarea-2"></textarea>
+		    		<textarea height="10" width="10" name="textarea-1" id="textarea-1"></textarea>
 				</div>
 			</div>
 			<!--Part A question 2-->
@@ -90,7 +90,7 @@
 				</div>
 				<div class="col-xs-6">
 					<label for="textarea">Comments</label>
-		    		<textarea height="10" width="10" name="textarea-2" id="textarea-2"></textarea>
+		    		<textarea height="10" width="10" name="textarea-3" id="textarea-3"></textarea>
 				</div>
 			</div>
 			<!--Part A question 4-->
@@ -115,7 +115,7 @@
 				</div>
 				<div class="col-xs-6">
 					<label for="textarea">Comments</label>
-		    		<textarea height="10" width="10" name="textarea-2" id="textarea-2"></textarea>
+		    		<textarea height="10" width="10" name="textarea-4" id="textarea-4"></textarea>
 				</div>
 			</div>
 			<!--Part A question 5-->
@@ -140,7 +140,7 @@
 				</div>
 				<div class="col-xs-6">
 					<label for="textarea">Comments</label>
-		    		<textarea height="10" width="10" name="textarea-2" id="textarea-2"></textarea>
+		    		<textarea height="10" width="10" name="textarea-5" id="textarea-5"></textarea>
 				</div>
 			</div>
 			<input type="submit" name="submit" id="submit">
@@ -155,40 +155,40 @@
     </script>
 
 </html>
-// <script>
-// 	$(document).ready(function(){
-// 		$('#submit').click('on',function(){
-// 			var fData = new FormData();			
-// 			//Question 1			
-// 			fData.append( 'PartAQuestion1', $("input:radio[name='question1']:checked").val());
-// 			//Question 2			
-// 			fData.append( 'PartAQuestion2', $("input:radio[name='question2']:checked").val());
-// 			//Question 3			
-// 			fData.append( 'PartAQuestion3', $("input:radio[name='question3']:checked").val());
-// 			//Question 4			
-// 			fData.append( 'PartAQuestion4', $("input:radio[name='question4']:checked").val());
-// 			//Question 5			
-// 			fData.append( 'PartAQuestion5', $("input:radio[name='question5']:checked").val());
-// 			for (var pair of fData.entries()) {
-//     			console.log(pair[0]+ ', ' + pair[1]);
-// 			}
-// 			//Upload file
-// 			$.ajax({
-// 				type: 'POST',
-// 				dataType: 'JSON',
-// 				url: 'index.html',
-// 				crossDomain: true,
-// 				data: fData,
-// 				processData: false,
-// 				contentType: false,
-// 				cache: false,
-// 				success: function(responce){
-// 					console.log("Success");
-// 				},
-// 				error: function(responce){
-// 					console.log("Error");
-// 				}
-// 			});
-// 		});
-// 	});
-// </script>
+<script>
+ 	$(document).ready(function(){
+		$('#submit').click('on',function(){
+ 			var fData = {};
+			fData = new Object();
+			//FIX THIS BEFORE DEMO!!!!!!!!!!!!!!!
+			fData['country'] = 'USA';
+			fData['community'] = "Da Hood";
+			fData['population'] = "12311";
+			fData['date'] = "12/31/11";
+			fData['A'] = new Object();
+			fData['A']['1'] = [$("input:radio[name='question1']:checked").val(),$('#textarea-1').val()];
+			fData['A']['2'] = [$("input:radio[name='question2']:checked").val(),$('#textarea-2').val()];
+			fData['A']['3'] = [$("input:radio[name='question3']:checked").val(),$('#textarea-3').val()];
+			fData['A']['4'] = [$("input:radio[name='question4']:checked").val(),$('#textarea-4').val()];
+			fData['A']['5'] = [$("input:radio[name='question5']:checked").val(),$('#textarea-5').val()];
+			var jsonData = JSON.stringify(fData);
+ 			//Upload file
+ 			$.ajax({
+ 				type: 'POST',
+ 				dataType: 'TEXT',
+ 				url: 'index.html',
+ 				crossDomain: true,
+ 				data: jsonData,
+ 				processData: false,
+ 				contentType: false,
+ 				cache: false,
+ 				success: function(responce){
+ 					console.log("Success");
+ 				},
+ 				error: function(responce){
+ 					console.log("Error");
+ 				}
+ 			});
+ 		});
+ 	});
+</script>

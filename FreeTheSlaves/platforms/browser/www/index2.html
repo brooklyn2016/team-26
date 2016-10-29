@@ -14,18 +14,23 @@
 		<link rel="stylesheet" href="css/freeTheSlaves.css"/>
 	</head>
 	<body>
-		<form action="index.html" method="post">
+		<form>
 			<h3 class="ui-bar ui-bar-a ui-corner-all">
-				A. Overall achievement: Slavery has been ended in this location
+				B. Trafficking and slavery public awareness:
 			</h3>
 			<!--Part A question 1-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">1</label>
+					<label for="num">6</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
-						Traffickers, whether from the village or from outside the village, cannot operate any more.
+            Residents in this village know how to protect themselves from trafficking during
+migration for work.
+(facilitator questions: In cases where a household member is migrating for work,
+are they: 1) counseled about the risks? 2) told about the measures to take to
+protect themselves? and 3) told whom to contact if they find themselves in
+slavery?)
 					</label>
 				</div>
 				<div class="col-xs-3">
@@ -46,11 +51,12 @@
 			<!--Part A question 2-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">2</label>
+					<label for="num">7</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
-						No one residing in this village is in any form of slavery.
+            Residents understand the risks of sending children to distant jobs, e.g. domestic
+work, mining or stone quarries, and circuses.
 					</label>
 				</div>
 				<div class="col-xs-3">
@@ -71,12 +77,12 @@
 			<!--Part A question 3-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">3</label>
+					<label for="num">8</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
-						People who migrate from this community for work are NOT being trafficked.
-					</label>
+            Residents are able to identify and pressure known traffickers to leave when they
+            appear in the community.					</label>
 				</div>
 				<div class="col-xs-3">
 					<fieldset data-role="controlgroup" data-type="horizontal">
@@ -96,12 +102,11 @@
 			<!--Part A question 4-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">4</label>
+					<label for="num">9</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
-						None of the children in this village are being exploited for commercial sex.
-					</label>
+Residents in this village know how to avoid debt bondage.					</label>
 				</div>
 				<div class="col-xs-3">
 					<fieldset data-role="controlgroup" data-type="horizontal">
@@ -121,12 +126,12 @@
 			<!--Part A question 5-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">5</label>
+					<label for="num">10</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
-						None of the children in this village are performing hazardous labor.
-					</label>
+            Residents understand the risks of early or forced marriage and false offers of
+            marriage					</label>
 				</div>
 				<div class="col-xs-3">
 					<fieldset data-role="controlgroup" data-type="horizontal">
@@ -143,6 +148,54 @@
 		    		<textarea height="10" width="10" name="textarea-5" id="textarea-5"></textarea>
 				</div>
 			</div>
+      <!--Part A question 6-->
+      <div class="row">
+        <div class="col-xs-1">
+          <label for="num">11</label>
+        </div>
+        <div class="col-xs-2">
+          <label for="question">
+Residents are able to confront domestic violence.					</label>
+        </div>
+        <div class="col-xs-3">
+          <fieldset data-role="controlgroup" data-type="horizontal">
+              <input type="radio" name="question6" id="question6.1" value="2" checked="checked">
+              <label for="question6.1">Completely <br/>True</label>
+              <input type="radio" name="question6" id="question6.2" value="1">
+              <label for="question6.2">Partially <br/>True</label>
+              <input type="radio" name="question6" id="question6.3" value="0">
+              <label for="question6.3">Completely <br/>Untrue</label>
+          </fieldset>
+        </div>
+        <div class="col-xs-6">
+          <label for="textarea">Comments</label>
+            <textarea height="10" width="10" name="textarea-6" id="textarea-6"></textarea>
+        </div>
+      </div>
+      <!--Part A question 7-->
+      			<div class="row">
+      				<div class="col-xs-1">
+      					<label for="num">12</label>
+      				</div>
+      				<div class="col-xs-2">
+      					<label for="question">
+                  Residents know how to file criminal complaints with the police.					</label>
+      				</div>
+      				<div class="col-xs-3">
+      					<fieldset data-role="controlgroup" data-type="horizontal">
+      					    <input type="radio" name="question7" id="question7.1" value="2" checked="checked">
+      					    <label for="question7.1">Completely <br/>True</label>
+      					    <input type="radio" name="question7" id="question7.2" value="1">
+      					    <label for="question7.2">Partially <br/>True</label>
+      					    <input type="radio" name="question7" id="question7.3" value="0">
+      					    <label for="question7.3">Completely <br/>Untrue</label>
+      					</fieldset>
+      				</div>
+      				<div class="col-xs-6">
+      					<label for="textarea">Comments</label>
+      		    		<textarea height="10" width="10" name="textarea-7" id="textarea-7"></textarea>
+      				</div>
+      			</div>
 			<input type="submit" name="submit" id="submit">
 		</form>
 	</body>
@@ -156,39 +209,39 @@
 
 </html>
 <script>
- 	$(document).ready(function(){
-		$('#submit').click('on',function(){
- 			var fData = {};
-			fData = new Object();
-			//FIX THIS BEFORE DEMO!!!!!!!!!!!!!!!
-			fData['country'] = 'USA';
-			fData['community'] = "Da Hood";
-			fData['population'] = "12311";
-			fData['date'] = "12/31/11";
-			fData['A'] = new Object();
-			fData['A']['1'] = [$("input:radio[name='question1']:checked").val(),$('#textarea-1').val()];
-			fData['A']['2'] = [$("input:radio[name='question2']:checked").val(),$('#textarea-2').val()];
-			fData['A']['3'] = [$("input:radio[name='question3']:checked").val(),$('#textarea-3').val()];
-			fData['A']['4'] = [$("input:radio[name='question4']:checked").val(),$('#textarea-4').val()];
-			fData['A']['5'] = [$("input:radio[name='question5']:checked").val(),$('#textarea-5').val()];
-			var jsonData = JSON.stringify(fData);
- 			//Upload file
- 			$.ajax({
- 				type: 'POST',
- 				dataType: 'TEXT',
- 				url: 'index.html',
- 				crossDomain: true,
- 				data: jsonData,
- 				processData: false,
- 				contentType: false,
- 				cache: false,
- 				success: function(responce){
- 					console.log("Success");
- 				},
- 				error: function(responce){
- 					console.log("Error");
- 				}
- 			});
- 		});
- 	});
-</script>
+// 	$(document).ready(function(){
+// 		$('#submit').click('on',function(){
+// 			var fData = new FormData();
+// 			//Question 1
+// 			fData.append( 'PartAQuestion1', $("input:radio[name='question1']:checked").val());
+// 			//Question 2
+// 			fData.append( 'PartAQuestion2', $("input:radio[name='question2']:checked").val());
+// 			//Question 3
+// 			fData.append( 'PartAQuestion3', $("input:radio[name='question3']:checked").val());
+// 			//Question 4
+// 			fData.append( 'PartAQuestion4', $("input:radio[name='question4']:checked").val());
+// 			//Question 5
+// 			fData.append( 'PartAQuestion5', $("input:radio[name='question5']:checked").val());
+// 			for (var pair of fData.entries()) {
+//     			console.log(pair[0]+ ', ' + pair[1]);
+// 			}
+// 			//Upload file
+// 			$.ajax({
+// 				type: 'POST',
+// 				dataType: 'JSON',
+// 				url: 'index.html',
+// 				crossDomain: true,
+// 				data: fData,
+// 				processData: false,
+// 				contentType: false,
+// 				cache: false,
+// 				success: function(responce){
+// 					console.log("Success");
+// 				},
+// 				error: function(responce){
+// 					console.log("Error");
+// 				}
+// 			});
+// 		});
+// 	});
+// </script>

@@ -14,19 +14,21 @@
 		<link rel="stylesheet" href="css/freeTheSlaves.css"/>
 	</head>
 	<body>
-		<form action="index.html" method="post">
+		<form>
 			<h3 class="ui-bar ui-bar-a ui-corner-all">
-				A. Overall achievement: Slavery has been ended in this location
+        C. Rights education:
 			</h3>
 			<!--Part A question 1-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">1</label>
+					<label for="num">13</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
-						Traffickers, whether from the village or from outside the village, cannot operate any more.
-					</label>
+            Residents understand basic human rights.
+            (facilitator questions: How many residents do you think know about freedom of
+            movement? freedom to join groups and assemble? right to education?)
+          					</label>
 				</div>
 				<div class="col-xs-3">
 					<fieldset data-role="controlgroup" data-type="horizontal">
@@ -46,11 +48,14 @@
 			<!--Part A question 2-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">2</label>
+					<label for="num">14</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
-						No one residing in this village is in any form of slavery.
+            Residents are able to list some of the country’s legal rights for workers.
+(facilitator questions: How many residents do you think know about minimum
+wages? The right to protection from violence and threats in the workplace? the
+right to prosecute traffickers? protections from child labor?)
 					</label>
 				</div>
 				<div class="col-xs-3">
@@ -71,11 +76,12 @@
 			<!--Part A question 3-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">3</label>
+					<label for="num">15</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
-						People who migrate from this community for work are NOT being trafficked.
+            Residents know it is a violation of human rights to use force, threat, or fraud to
+compel someone to go to a workplace or prevent someone from leaving a job.
 					</label>
 				</div>
 				<div class="col-xs-3">
@@ -96,11 +102,12 @@
 			<!--Part A question 4-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">4</label>
+					<label for="num">16</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
-						None of the children in this village are being exploited for commercial sex.
+            Residents are clearly and non-violently able to communicate their rights to
+officials and others in power.
 					</label>
 				</div>
 				<div class="col-xs-3">
@@ -121,11 +128,15 @@
 			<!--Part A question 5-->
 			<div class="row">
 				<div class="col-xs-1">
-					<label for="num">5</label>
+					<label for="num">17</label>
 				</div>
 				<div class="col-xs-2">
 					<label for="question">
-						None of the children in this village are performing hazardous labor.
+            Residents know how to demand and obtain benefits to which they may be entitled
+from the government.
+(facilitator questions: How many residents do you think know how to demand
+birth registration? pensions? social security? basic social services such as health
+care and education?)
 					</label>
 				</div>
 				<div class="col-xs-3">
@@ -156,39 +167,39 @@
 
 </html>
 <script>
- 	$(document).ready(function(){
-		$('#submit').click('on',function(){
- 			var fData = {};
-			fData = new Object();
-			//FIX THIS BEFORE DEMO!!!!!!!!!!!!!!!
-			fData['country'] = 'USA';
-			fData['community'] = "Da Hood";
-			fData['population'] = "12311";
-			fData['date'] = "12/31/11";
-			fData['A'] = new Object();
-			fData['A']['1'] = [$("input:radio[name='question1']:checked").val(),$('#textarea-1').val()];
-			fData['A']['2'] = [$("input:radio[name='question2']:checked").val(),$('#textarea-2').val()];
-			fData['A']['3'] = [$("input:radio[name='question3']:checked").val(),$('#textarea-3').val()];
-			fData['A']['4'] = [$("input:radio[name='question4']:checked").val(),$('#textarea-4').val()];
-			fData['A']['5'] = [$("input:radio[name='question5']:checked").val(),$('#textarea-5').val()];
-			var jsonData = JSON.stringify(fData);
- 			//Upload file
- 			$.ajax({
- 				type: 'POST',
- 				dataType: 'TEXT',
- 				url: 'index.html',
- 				crossDomain: true,
- 				data: jsonData,
- 				processData: false,
- 				contentType: false,
- 				cache: false,
- 				success: function(responce){
- 					console.log("Success");
- 				},
- 				error: function(responce){
- 					console.log("Error");
- 				}
- 			});
- 		});
- 	});
-</script>
+// 	$(document).ready(function(){
+// 		$('#submit').click('on',function(){
+// 			var fData = new FormData();
+// 			//Question 1
+// 			fData.append( 'PartAQuestion1', $("input:radio[name='question1']:checked").val());
+// 			//Question 2
+// 			fData.append( 'PartAQuestion2', $("input:radio[name='question2']:checked").val());
+// 			//Question 3
+// 			fData.append( 'PartAQuestion3', $("input:radio[name='question3']:checked").val());
+// 			//Question 4
+// 			fData.append( 'PartAQuestion4', $("input:radio[name='question4']:checked").val());
+// 			//Question 5
+// 			fData.append( 'PartAQuestion5', $("input:radio[name='question5']:checked").val());
+// 			for (var pair of fData.entries()) {
+//     			console.log(pair[0]+ ', ' + pair[1]);
+// 			}
+// 			//Upload file
+// 			$.ajax({
+// 				type: 'POST',
+// 				dataType: 'JSON',
+// 				url: 'index.html',
+// 				crossDomain: true,
+// 				data: fData,
+// 				processData: false,
+// 				contentType: false,
+// 				cache: false,
+// 				success: function(responce){
+// 					console.log("Success");
+// 				},
+// 				error: function(responce){
+// 					console.log("Error");
+// 				}
+// 			});
+// 		});
+// 	});
+// </script>

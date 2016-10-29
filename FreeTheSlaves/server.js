@@ -32,6 +32,12 @@ app.get("/index.html", function (request, response) {
     response.sendFile("/www/index.html", { root: __dirname });
 });
 
+app.post("/index.html", function (request, response) { 
+    // We have to pass a second parameter to specify the root directory
+    // __dirname is a global variable representing the file directory you are currently in
+    response.sendFile("/www/index.html", { root: __dirname });
+});
+
 app.get("/index2.html", function (request, response) { 
     // We have to pass a second parameter to specify the root directory
     // __dirname is a global variable representing the file directory you are currently in

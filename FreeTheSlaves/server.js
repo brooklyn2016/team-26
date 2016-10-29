@@ -103,15 +103,19 @@ app.post("/addusers", function(request, response) {
     
 });
 
-app.post("/authuser", function(request, response) {
+app.post("/selectcountry", function(request, response) {
 
     if(!request.body.username) {
         response.status(400).json({message: "Username not given!"});
     } else if(!request.body.password) {
         response.status(400).json({message: "Password not given!"});
     } else {
+        console.log("Supp v2!!!");
         usersData.authenticateUser(request.body.username, request.body.password).then((success) => {
-            response.json(success);
+            if(success === true) {
+                response.sendFile("www/informationindex.html", {root: __dirname });
+            }
+            //response.json(success);
         }, (error) => {
             response.status(500).json({message: error});
         });

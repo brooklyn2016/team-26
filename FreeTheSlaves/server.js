@@ -44,6 +44,65 @@ app.post("/index2.html", function (request, response) {
     response.sendFile("/www/index2.html", { root: __dirname });
 });
 
+app.get("/index3.html", function (request, response) { 
+    // We have to pass a second parameter to specify the root directory
+    // __dirname is a global variable representing the file directory you are currently in
+    response.sendFile("/www/index3.html", { root: __dirname });
+});
+
+app.post("/index3.html", function (request, response) { 
+    // We have to pass a second parameter to specify the root directory
+    // __dirname is a global variable representing the file directory you are currently in
+    response.sendFile("/www/index3.html", { root: __dirname });
+});
+
+app.get("/index4.html", function (request, response) { 
+    // We have to pass a second parameter to specify the root directory
+    // __dirname is a global variable representing the file directory you are currently in
+    response.sendFile("/www/index4.html", { root: __dirname });
+});
+
+app.post("/index4.html", function (request, response) { 
+    // We have to pass a second parameter to specify the root directory
+    // __dirname is a global variable representing the file directory you are currently in
+    response.sendFile("/www/index4.html", { root: __dirname });
+});
+
+app.get("/index5.html", function (request, response) { 
+    // We have to pass a second parameter to specify the root directory
+    // __dirname is a global variable representing the file directory you are currently in
+    response.sendFile("/www/index5.html", { root: __dirname });
+});
+
+app.post("/index5.html", function (request, response) { 
+    // We have to pass a second parameter to specify the root directory
+    // __dirname is a global variable representing the file directory you are currently in
+    response.sendFile("/www/index5.html", { root: __dirname });
+});
+
+app.get("/index6.html", function (request, response) { 
+    // We have to pass a second parameter to specify the root directory
+    // __dirname is a global variable representing the file directory you are currently in
+    response.sendFile("/www/index6.html", { root: __dirname });
+});
+
+app.post("/index6.html", function (request, response) { 
+    // We have to pass a second parameter to specify the root directory
+    // __dirname is a global variable representing the file directory you are currently in
+    response.sendFile("/www/index6.html", { root: __dirname });
+});
+
+app.get("/index7.html", function (request, response) { 
+    // We have to pass a second parameter to specify the root directory
+    // __dirname is a global variable representing the file directory you are currently in
+    response.sendFile("/www/index7.html", { root: __dirname });
+});
+
+app.post("/index7.html", function (request, response) { 
+    // We have to pass a second parameter to specify the root directory
+    // __dirname is a global variable representing the file directory you are currently in
+    response.sendFile("/www/index7.html", { root: __dirname });
+});
 
 app.get("/dbcall/:country", function(request, response) {
 

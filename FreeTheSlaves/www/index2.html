@@ -239,6 +239,9 @@
 </html>
 <script>
  	$(document).ready(function(){
+			var jsonData = JSON.parse(Cookies.get("jsonData"));
+			console.log("here is json");
+			console.log(jsonData);
 		$('#submit').click('on',function(){
  			var fData = JSON.parse(Cookies.get("jsonData"));
  			Cookies.remove('jsonData');
@@ -257,7 +260,16 @@
 			fData['B']['5'] = [$("input:radio[name='question5']:checked").val(),$('#textarea-5').val()];
 			var jsonData = JSON.stringify(fData);
 			Cookies.set("jsonData", JSON.stringify(jsonData));
+			console.log("here is json");
 			console.log(jsonData);
+			
+ 			
+
+
+
+
+
+
 
  			//Upload file
  			/*$.ajax({
@@ -275,7 +287,6 @@
  				error: function(responce){
  					console.log("Error");
  				}
- 			});8?
- 		});
+ 			});*/ 		});
  	});
 </script>

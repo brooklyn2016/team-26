@@ -28,23 +28,6 @@ app.get("/", function (request, response) {
     response.sendFile("/www/welcome.html", { root: __dirname });
 });
 
-
-app.get("/allelsefails", function (request, response) { 
-    // We have to pass a second parameter to specify the root directory
-    // __dirname is a global variable representing the file directory you are currently in
-    response.sendFile("/www/allelsefails.html", { root: __dirname });
-});
-
-app.post("/allelsefails", function (request, response) { 
-    // We have to pass a second parameter to specify the root directory
-    // __dirname is a global variable representing the file directory you are currently in
-    console.log(request.body);
-});
-
-
-
-
-
 app.get("/index.html", function (request, response) { 
     // We have to pass a second parameter to specify the root directory
     // __dirname is a global variable representing the file directory you are currently in
@@ -171,8 +154,6 @@ app.post("/postRecord", function(request, response) {
     }, (error) => {
         response.status(500).json({message: "unable to add record!"});
     });
-    
-    
 });
 
 

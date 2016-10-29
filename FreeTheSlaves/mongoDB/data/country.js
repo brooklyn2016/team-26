@@ -92,6 +92,7 @@ let exportedMethods = {
         }
     
     },
+        
     addRecord(jsonObj) {
         
         let newRecord = {
@@ -251,7 +252,7 @@ let exportedMethods = {
                 return this.getRecipeById(id);
             });
         });
-    },        
+    }        
 }
 
 module.exports = exportedMethods;

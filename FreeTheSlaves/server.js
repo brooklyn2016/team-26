@@ -201,7 +201,6 @@ app.post("/selectcountry", function(request, response) {
     } else if(!request.body.password) {
         response.status(400).json({message: "Password not given!"});
     } else {
-        console.log("Supp v2!!!");
         usersData.authenticateUser(request.body.username, request.body.password).then((success) => {
             if(success === true) {
                 newRecJSON["SubmittedBy"] = request.body.username;

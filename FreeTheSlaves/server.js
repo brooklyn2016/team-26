@@ -40,7 +40,7 @@ app.get("/cool.html/:country", function(request, response) {
 
 });
 
-app.get("/:country/:id", function(request, response) {
+app.get("/cool.html/:country/:id", function(request, response) {
     countryData.getRecordById(request.params.country, request.params.id).then((record) => {
         response.json(record);
     }, (error) => {
@@ -77,5 +77,5 @@ app.delete("/cool.html/:country/:id", function(request, response) {
 
 // We can now navigate to localhost:3000
 app.listen(3000, function () {
-    console.log('Your server is now listening on port 3000! Navigate to http://localhost:3000 to access it');
+    console.log('Your server is now listening on port 3000! \nNavigate to http://localhost:3000 to access it');
 });

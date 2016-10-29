@@ -96,47 +96,43 @@ let exportedMethods = {
     addRecord(jsonObj) {
         
         
-        //var newRecord = { };
+        var newRecord = { 
+           _id: uuid.v4()
+        };
+  
         
-        //newRecord._id = uuid.v4();
-        
-        
-        
-        jsonObj["_id"] = uuid.v4();
-        
-        /*
-        if(!(jsonObj.community)) {
+        if(jsonObj.community !== undefined) {
             newRecord.community = jsonObj.community;   
         } else {
             return Promise.reject("Community not given");
         }
         
-        if(!jsonObj.pop) {
-            newRecord["population"] = jsonObj.pop;   
+        if(jsonObj.population !== undefined) {
+            newRecord.population = jsonObj.population;   
         } else {
             return Promise.reject("Population not given");
         }
         
         
-        if(!jsonObj.date) {
+        if(jsonObj.date !== undefined) {
             newRecord["date"] = jsonObj.date;   
         } else {
             return Promise.reject("Date not given");
         }        
         
-        if(!jsonObj.A) {
+        if(jsonObj.A !== undefined) {
             newRecord["A"] = jsonObj.A;   
         } else {
             return Promise.reject("Section A not given");
         }
         
-        if(!jsonObj.B) {
+        if(jsonObj.B !== undefined) {
             newRecord["B"] = jsonObj.B;   
         } else {
             return Promise.reject("Section B not given");
         }
         
-        
+        /*
         if(!jsonObj.C) {
             newRecord["C"] = jsonObj.C;   
         } else {
@@ -169,55 +165,56 @@ let exportedMethods = {
         */
         if(jsonObj.country === "Senegal") {
             return Senegal().then((SenegalCollection) => {            
-                return SenegalCollection.insertOne(jsonObj).then((newInsertInformation) => {
+                return SenegalCollection.insertOne(newRecord).then((newInsertInformation) => {
                     return newInsertInformation.insertedId;
                 }).then((newId) => {
                     return this.getRecordById(jsonObj.country, newId);
                 });
             });
-        } 
-        if(jsonObj.country === "India") {
+        } else if(jsonObj.country === "India") {
             console.log("We made it!");
             return India().then((IndiaCollection) => {
                 console.log("We made it v2!");
-                return IndiaCollection.insertOne(jsonObj).then((newInsertInformation) => {
+                return IndiaCollection.insertOne(newRecord).then((newInsertInformation) => {
                     return newInsertInformation.insertedId;
                 }).then((newId) => {
                     return this.getRecordById(jsonObj.country, newId);
                 });
             });
-        } if(jsonObj.country === "Nepal") {
+        } else if(jsonObj.country === "Nepal") {
             return Nepal().then((NepalCollection) => {            
-                return NepalCollection.insertOne(jsonObj).then((newInsertInformation) => {
+                return NepalCollection.insertOne(newRecord).then((newInsertInformation) => {
                     return newInsertInformation.insertedId;
                 }).then((newId) => {
                     return this.getRecordById(jsonObj.country, newId);
                 });
             });
-        } if(jsonObj.country === "Ghana") {
+        } else if(jsonObj.country === "Ghana") {
             return Ghana().then((GhanaCollection) => {            
-                return GhanaCollection.insertOne(jsonObj).then((newInsertInformation) => {
+                return GhanaCollection.insertOne(newRecord).then((newInsertInformation) => {
                     return newInsertInformation.insertedId;
                 }).then((newId) => {
                     return this.getRecordById(jsonObj.country, newId);
                 });
             });
-        } if(jsonObj.country === "Haiti") {
+        } else if(jsonObj.country === "Haiti") {
             return Haiti().then((HaitiCollection) => {            
-                return HaitiCollection.insertOne(jsonObj).then((newInsertInformation) => {
+                return HaitiCollection.insertOne(newRecord).then((newInsertInformation) => {
                     return newInsertInformation.insertedId;
                 }).then((newId) => {
                     return this.getRecordById(jsonObj.country, newId);
                 });
             });
-        } if(jsonObj.country === "DRC") {
+        } else if(jsonObj.country === "DRC") {
             return DRC().then((DRCCollection) => {            
-                return DRCCollection.insertOne(jsonObj).then((newInsertInformation) => {
+                return DRCCollection.insertOne(newRecord).then((newInsertInformation) => {
                     return newInsertInformation.insertedId;
                 }).then((newId) => {
                     return this.getRecordById(jsonObj.country, newId);
                 });
             });
+        } else {
+             return Promise.reject("Invalid Country");   
         }
 
 

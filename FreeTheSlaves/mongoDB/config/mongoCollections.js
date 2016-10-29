@@ -22,6 +22,7 @@ let getCollectionFn = (collection) => {
 }
 
 module.exports = {
+    Users: getCollectionFn("Users"),
     Senegal: getCollectionFn("Senegal"),
     India: getCollectionFn("India"),
     Nepal: getCollectionFn("Nepal"),

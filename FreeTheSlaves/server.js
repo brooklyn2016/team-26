@@ -6,6 +6,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 const data = require("./mongoDB/data");
+const usersData = data.Users;
 const countryData = data.country;
 
 // This is called 'adding middleware', or things that will help parse your request
@@ -25,7 +26,7 @@ app.get("/", function (request, response) {
     response.sendFile("./www/index.html", { root: __dirname });
 });
 
-app.get("/cool.html/:country", function(request, response) {
+app.get("/dbcall/:country", function(request, response) {
 
     if(!request.params.country) {
         response.status(400).json({message: "country not given!"});
@@ -40,7 +41,7 @@ app.get("/cool.html/:country", function(request, response) {
 
 });
 
-app.get("/cool.html/:country/:id", function(request, response) {
+app.get("/dbcall/:country/:id", function(request, response) {
     countryData.getRecordById(request.params.country, request.params.id).then((record) => {
         response.json(record);
     }, (error) => {
@@ -65,7 +66,7 @@ app.post("/index.html", function(request, response) {
 });
 
 
-app.delete("/cool.html/:country/:id", function(request, response) {
+app.delete("/dbcall/:country/:id", function(request, response) {
     return countryData.removeRecord(request.params.country, request.params.id)
         .then(() => {
             response.sendStatus(200);
@@ -74,6 +75,27 @@ app.delete("/cool.html/:country/:id", function(request, response) {
         });
 
 });
+
+
+
+app.post("/users", function(request, response) {
+
+    if(!request.body.username) {
+        response.status(400).json({message: "Username not given!"});
+    } else if(!request.body.password) {
+        response.status(400).json({message: "Password not given!"});
+    } else {
+    
+        usersData.addUser(request.body.username, request.body.password).then((user) => {
+            response.json(user);
+        }, (error) => {
+            response.status(500).json({message: "unable to add user!"});
+        });
+    }
+    
+});
+
+
 
 // We can now navigate to localhost:3000
 app.listen(3000, function () {

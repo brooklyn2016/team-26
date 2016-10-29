@@ -6,7 +6,10 @@
  */
 
 const CountryData = require("./country");
+const UsersData = require("./users");
 
 module.exports = {
-    country: CountryData
+    country: CountryData,
+    Users: UsersData,
+    
 };

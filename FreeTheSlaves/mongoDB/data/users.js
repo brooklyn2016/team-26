@@ -34,8 +34,14 @@ let exportedMethods = {
         } else {
             return Promise.reject("Username not given");
         }
-    
-    
+        
+        return users().then((userCollection) => {            
+            return userCollection.insertOne(newUser).then((newInsertInformation) => {
+                return newInsertInformation.insertedId;
+            });
+        });
+
+
     },
     
     authenticateUser(userName, passWord) {

@@ -2,7 +2,7 @@
  * Free the Slaves
  * MongoDB Setup
  * October 28, 2016
- * mongoDBconfig\mongoCollections.js 
+ * mongoDB\config\mongoCollections.js 
  */
 
 const dbConnection = require("./mongoConnection");
@@ -22,10 +22,10 @@ let getCollectionFn = (collection) => {
 }
 
 module.exports = {
-    senegal: getCollectionFn("Senegal"),
-    india: getCollectionFn("India"),
-    nepal: getCollectionFn("Nepal"),
-    ghana: getCollectionFn("Ghana"),
-    haiti: getCollectionFn("Haiti"),
-    drc: getCollectionFn("DRC")    
+    Senegal: getCollectionFn("Senegal"),
+    India: getCollectionFn("India"),
+    Nepal: getCollectionFn("Nepal"),
+    Ghana: getCollectionFn("Ghana"),
+    Haiti: getCollectionFn("Haiti"),
+    DRC: getCollectionFn("DRC")    
 };

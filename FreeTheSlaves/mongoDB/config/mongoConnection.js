@@ -2,7 +2,7 @@
  * Free the Slaves
  * MongoDB Setup
  * October 28, 2016
- * mongoDBconfig\mongoConnections.js 
+ * mongoDB\config\mongoConnections.js 
  */
 
 const MongoClient = require("mongodb").MongoClient;;

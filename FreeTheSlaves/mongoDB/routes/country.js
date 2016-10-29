@@ -28,7 +28,7 @@ router.get("/:country/:id", (req, res) => {
     });
 });
 
-router.post("/question7", (req, res) => {
+router.post("/", (req, res) => {
     
     if(!req.body.country) {
         res.status(400).json({message: "country not given!"});
@@ -83,11 +83,11 @@ router.put("/:recipeId/:commentId", (req, res) => {
     
 });
 
-
+*/
 
 router.delete("/:country/:id", (req, res) => {
 
-    return commentsData.removeComment(req.params.id)
+    return countryData.removeRecord(req.params.country, req.params.id)
         .then(() => {
             res.sendStatus(200);
         }).catch((e) => {
@@ -96,6 +96,6 @@ router.delete("/:country/:id", (req, res) => {
 
 });
 
-*/
+
 
 module.exports = router;

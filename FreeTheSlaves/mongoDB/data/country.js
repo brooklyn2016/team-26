@@ -1,36 +1,147 @@
-/* Name: Jason Mohammad Sarwar
- * CS 546
- * Lab 5 - A Recipe API
- * October 24, 2016
- * data\recipes.js
+/* Code For Good 2016
+ * Free the Slaves
+ * MongoDB Setup
+ * October 28, 2016
+ * mongoDB\data\country.js 
  */
-
 const mongoCollections = require("../config/mongoCollections");
+
 const Senegal = mongoCollections.Senegal;
 const India = mongoCollections.India;
 const Nepal = mongoCollections.Nepal;
 const Ghana = mongoCollections.Ghana;
 const Haiti = mongoCollections.Haiti;
 const DRC = mongoCollections.DRC;
+
 const uuid = require('node-uuid');
 
 let exportedMethods = {
-    getAllRecords() {
-        return recipes().then((recipeCollection) => {
-            return recipeCollection.find({}, {"_id":true, "title":true}).toArray();
-        });
+    getAllRecords(country) {
+        if(country === "Senegal") {
+            return Senegal().then((SenegalCollection) => {
+                return SenegalCollection.find({}).toArray();
+            });
+        } else if(country === "India") {
+            return India().then((IndiaCollection) => {
+                return IndiaCollection.find({}).toArray();
+            });
+        } else if(country === "Nepal") {
+            return Nepal().then((NepalCollection) => {
+                return NepalCollection.find({}).toArray();
+            });
+        } else if(country === "Ghana") {
+            return Ghana().then((GhanaCollection) => {
+                return GhanaCollection.find({}).toArray();
+            });
+        } else if(country === "Haiti") {
+            return Haiti().then((HaitiCollection) => {
+                return HaitiCollection.find({}).toArray();
+            });
+        } else if(country === "DRC") {
+            return DRC().then((DRCCollection) => {
+                return DRCCollection.find({}).toArray();
+            });
+        }
+        
     },
 
-    getRecordById(id) {
-        return recipes().then((recipeCollection) => {
-            return recipeCollection.findOne({ _id: id }).then((recipe) => {
-                if (!recipe) return Promise.reject("Recipe not found");
-                return recipe;
+    getRecordById(country, id) {
+    
+        if(country === "Senegal") {
+            return Senegal().then((SenegalCollection) => {
+                return SenegalCollection.findOne({ _id: id }).then((record) => {
+                    if (!record) return Promise.reject("Record not found");
+                    return record;
+                });
             });
-        });
+        } else if(country === "India") {
+            return India().then((IndiaCollection) => {
+                return IndiaCollection.findOne({ _id: id }).then((record) => {
+                    if (!record) return Promise.reject("Record not found");
+                    return record;
+                });
+            });
+        } else if(country === "Nepal") {
+            return Nepal().then((NepalCollection) => {
+                return NepalCollection.findOne({ _id: id }).then((record) => {
+                    if (!record) return Promise.reject("Record not found");
+                    return record;
+                });
+            });
+        } else if(country === "Ghana") {
+            return Ghana().then((GhanaCollection) => {
+                return GhanaCollection.findOne({ _id: id }).then((record) => {
+                    if (!record) return Promise.reject("Record not found");
+                    return record;
+                });
+            });
+        } else if(country === "Haiti") {
+            return Haiti().then((HaitiCollection) => {
+                return HaitiCollection.findOne({ _id: id }).then((record) => {
+                    if (!record) return Promise.reject("Record not found");
+                    return record;
+                });
+            });
+        } else if(country === "DRC") {
+            return DRC().then((DRCCollection) => {
+                return DRCCollection.findOne({ _id: id }).then((record) => {
+                    if (!record) return Promise.reject("Record not found");
+                    return record;
+                });
+            });
+        }
+    
     },
-    addRecord(recipeObj) {
-        return recipes().then((recipeCollection) => {
+    addRecord(jsonObj) {
+        
+        let newRecord = {
+              _id: uuid.v4()
+        };
+        
+        if(!jsonObj.A) {
+            newRecord["A"] = jsonObj.A;   
+        } else {
+            return Promise.reject("Section A not given");
+        }
+        
+        if(!jsonObj.B) {
+            newRecord["B"] = jsonObj.B;   
+        } else {
+            return Promise.reject("Section B not given");
+        }
+        
+        if(!jsonObj.C) {
+            newRecord["C"] = jsonObj.C;   
+        } else {
+            return Promise.reject("Section C not given");
+        }
+        
+        if(!jsonObj.D) {
+            newRecord["D"] = jsonObj.D;   
+        } else {
+            return Promise.reject("Section D not given");
+        }
+        
+        if(!jsonObj.E) {
+            newRecord["E"] = jsonObj.E;   
+        } else {
+            return Promise.reject("Section E not given");
+        }
+        
+        if(!jsonObj.F) {
+            newRecord["F"] = jsonObj.F;   
+        } else {
+            return Promise.reject("Section F not given");
+        }
+        
+        if(!jsonObj.G) {
+            newRecord["G"] = jsonObj.G;   
+        } else {
+            return Promise.reject("Section G not given");
+        }
+        
+        
+        
             /*
             let newRecipe = {
                 _id: uuid.v4()
@@ -54,14 +165,58 @@ let exportedMethods = {
                 newRecipe["comments"] = recipeObj.comments;  
             }            
             */
-            recipeObj["_id"] = uuid.v4();
         
-            return recipeCollection.insertOne(recipeObj).then((newInsertInformation) => {
-                return newInsertInformation.insertedId;
-            }).then((newId) => {
-                return this.getRecipeById(newId);
+        if(jsonObj.country === "Senegal") {
+            return Senegal().then((SenegalCollection) => {            
+                return SenegalCollection.insertOne(newRecord).then((newInsertInformation) => {
+                    return newInsertInformation.insertedId;
+                }).then((newId) => {
+                    return this.getRecordById(jsonObj.country, newId);
+                });
             });
-        });
+        } else if(jsonObj.country === "India") {
+            return India().then((IndiaCollection) => {            
+                return IndiaCollection.insertOne(newRecord).then((newInsertInformation) => {
+                    return newInsertInformation.insertedId;
+                }).then((newId) => {
+                    return this.getRecordById(jsonObj.country, newId);
+                });
+            });
+        } else if(jsonObj.country === "Nepal") {
+            return Nepal().then((NepalCollection) => {            
+                return NepalCollection.insertOne(newRecord).then((newInsertInformation) => {
+                    return newInsertInformation.insertedId;
+                }).then((newId) => {
+                    return this.getRecordById(jsonObj.country, newId);
+                });
+            });
+        } else if(jsonObj.country === "Ghana") {
+            return Ghana().then((GhanaCollection) => {            
+                return GhanaCollection.insertOne(newRecord).then((newInsertInformation) => {
+                    return newInsertInformation.insertedId;
+                }).then((newId) => {
+                    return this.getRecordById(jsonObj.country, newId);
+                });
+            });
+        } else if(jsonObj.country === "Haiti") {
+            return Haiti().then((HaitiCollection) => {            
+                return HaitiCollection.insertOne(newRecord).then((newInsertInformation) => {
+                    return newInsertInformation.insertedId;
+                }).then((newId) => {
+                    return this.getRecordById(jsonObj.country, newId);
+                });
+            });
+        } else if(jsonObj.country === "DRC") {
+            return DRC().then((DRCCollection) => {            
+                return DRCCollection.insertOne(newRecord).then((newInsertInformation) => {
+                    return newInsertInformation.insertedId;
+                }).then((newId) => {
+                    return this.getRecordById(jsonObj.country, newId);
+                });
+            });
+        }
+
+
     },
     removeRecipe(id) {
         return recipes().then((recipeCollection) => {

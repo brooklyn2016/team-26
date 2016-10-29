@@ -8,5 +8,5 @@
 const CountryData = require("./country");
 
 module.exports = {
-    country: CountrylData
+    country: CountryData
 };

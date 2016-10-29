@@ -1,25 +1,15 @@
-/* Name: Jason Mohammad Sarwar
- * CS 546
- * Lab 5 - A Recipe API
- * October 24, 2016
- * routes\index.js
+/* Code For Good 2016
+ * Free the Slaves
+ * MongoDB Setup
+ * October 28, 2016
+ * mongoDB\route\index.js 
  */
 
-const SenegalRoutes = require("./senegal");
-const IndiaRoutes = require("./india");
-const NepalRoutes = require("./nepal");
-const GhanaRoutes = require("./ghana");
-const HaitiRoutes = require("./haiti");
-const DRCRoutes = require("./drc");
+const CountryRoutes = require("./country");
 
 
 const constructorMethod = (app) => {
-    app.use("/senegal", SenegalRoutes);
-    app.use("/india", IndiaRoutes);
-    app.use("/nepal", NepalRoutes);
-    app.use("/ghana", GhanaRoutes);
-    app.use("/haiti", HaitiRoutes);
-    app.use("/drc", DRCRoutes);
+    app.use("/country", CountryRoutes);
     
     app.use("*", (req, res) => {
         res.status(404).json({error: "Not found"});

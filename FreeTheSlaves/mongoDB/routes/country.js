@@ -1,52 +1,48 @@
-/* Name: Jason Mohammad Sarwar
- * CS 546
- * Lab 5 - A Recipe API
- * October 24, 2016
- * routes\comments.js
+/* Code For Good 2016
+ * Free the Slaves
+ * MongoDB Setup
+ * October 28, 2016
+ * mongoDB\route\country.js 
  */
 
 const express = require('express');
 const router = express.Router();
 const data = require("../data");
-const commentsData = data.comments;
+const countryData = data.country;
 
-router.get("/:commentId", (req, res) => {
-    commentsData.getCommentById(req.params.commentId).then((comment) => {
-        res.json(comment);
+router.get("/:country/:id", (req, res) => {
+    countryData.getRecordById(req.params.country, req.params.id).then((record) => {
+        res.json(record);
     }, (error) => {
         // Not found!
         res.status(404).json({message: "not found!"});
     });
 });
 
-router.get("/recipe/:recipeId", (req, res) => {
-    commentsData.getAllComments(req.params.recipeId).then((comment) => {
-        res.json(comment);
+router.get("/:country", (req, res) => {
+    countryData.getAllRecords(req.params.country).then((record) => {
+        res.json(record);
     }, (error) => {
         // Not found!
         res.status(404).json({message: "not found!"});
     });
 });
 
-router.get("/", (req, res) => {
-    /*
-    hobbiesData.getAllHobbyNames().then((hobbies) => {
-        res.json(hobbies);
-    }, () => {
-        // Something went wrong with the server!
-        res.status(500).send();
-    });
-    */
+router.post("/question7", (req, res) => {
+    
+    if(!req.body.country) {
+        res.status(400).json({message: "country not given!"});
+    } else {
+    
+        countryData.addRecord(req.body).then((record) => {
+            res.json(record);
+        }, (error) => {
+            res.status(500).json({message: "unable to add record!"});
+        });
+    }
 });
 
-router.post("/:recipeId", (req, res) => {
-    commentsData.addComment(req.params.recipeId, req.body.poster, req.body.comment).then((comment) => {
-        res.json(comment);
-    }, (error) => {
-        res.status(500).json({message: "unable to add comment!"});
-    });
-});
-
+/*
 router.put("/:recipeId/:commentId", (req, res) => {
     
     if(!req.body){
@@ -97,5 +93,7 @@ router.delete("/:id", (req, res) => {
         });
 
 });
+
+*/
 
 module.exports = router;

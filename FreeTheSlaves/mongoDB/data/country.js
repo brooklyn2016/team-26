@@ -98,6 +98,24 @@ let exportedMethods = {
               _id: uuid.v4()
         };
         
+        if(!jsonObj.pop) {
+            newRecord["population"] = jsonObj.pop;   
+        } else {
+            return Promise.reject("Population not given");
+        }
+        
+        if(!jsonObj.district) {
+            newRecord["F"] = jsonObj.F;   
+        } else {
+            return Promise.reject("Section F not given");
+        }
+        
+        if(!jsonObj.G) {
+            newRecord["G"] = jsonObj.G;   
+        } else {
+            return Promise.reject("Section G not given");
+        }        
+        
         if(!jsonObj.A) {
             newRecord["A"] = jsonObj.A;   
         } else {

@@ -54,8 +54,7 @@ app.get("/index.html", function (request, response) {
 app.post("/index.html", function (request, response) { 
     // We have to pass a second parameter to specify the root directory
     // __dirname is a global variable representing the file directory you are currently in
-    console.log(request.body);
-    newRecJSON["A"] = "AAAA";
+    newRecJSON["country"] = request.body.country;
     response.sendFile("/www/index.html", { root: __dirname });
 });
 
